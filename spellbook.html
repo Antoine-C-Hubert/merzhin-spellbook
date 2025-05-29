@@ -189,6 +189,15 @@
             color: #8b4513;
             margin: 0;
         }
+        
+        .spell-name-en {
+            font-size: 0.8em;
+            font-weight: normal;
+            color: #8b4513;
+            font-style: italic;
+            display: block;
+            margin-top: 2px;
+        }
 
         .spell-level {
             color: white;
@@ -307,7 +316,7 @@
             background: rgba(212, 175, 55, 0.1);
             padding: 10px;
             border-radius: 5px;
-            border-left: 4px solid #d4af37;
+            border-left: 4px solid #d43737;
             margin-top: 10px;
             font-size: 0.9em;
         }
@@ -320,6 +329,17 @@
             margin-top: 10px;
             padding-top: 10px;
             border-top: 1px solid #eee;
+        }
+        
+        .spell-comment {
+            background: rgba(139, 69, 19, 0.05);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #8b4513;
+            margin-top: 10px;
+            border-left: 4px solid #999998;
+            font-style: italic;
         }
 
         .learning-source {
@@ -434,7 +454,6 @@
         .spell-card[data-school="Divination"] { --school-color: #FFD700; }
         .spell-card[data-school="Enchantement"] { --school-color: #FF69B4; }
         .spell-card[data-school="Évocation"] { --school-color: #FF4500; }
-        .spell-card[data-school="Evocation"] { --school-color: #FF4500; }
         .spell-card[data-school="Illusion"] { --school-color: #9370DB; }
         .spell-card[data-school="Nécromancie"] { --school-color: #2F4F4F; }
         .spell-card[data-school="Transmutation"] { --school-color: #228B22; }
@@ -509,8 +528,8 @@
             <div class="book-spine"></div>
             <div class="book-content">
                 <div class="book-header">
-                    <h1 class="book-title">Livre de Sorts</h1>
-                    <p class="book-subtitle">Grimoire de Merzhin</p>
+                    <h1 class="book-title">Guide modérément prévisible des incantations improbables</h1>
+                    <p class="book-subtitle">Par Merzhin</p>
                 </div>
 
                 <div class="stats-container">
@@ -647,6 +666,7 @@
 [
     {
         "name": "Main de mage",
+        "name_en": "Mage Hand",
         "level": 0,
         "school": "Invocation",
         "class": ["Barde", "Ensorceleur", "Occultiste", "Magicien"],
@@ -661,12 +681,14 @@
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": true,
-        "learning_source": "Unseen University"
+        "learning_source": "Unseen University",
+        "comment": "Déplacer des objets à distance : tirez des leviers douteux, ouvrez des portes suspectes, triez votre linge enchanté (attention aux chaussettes dimensionnelles), et évitez de risquer vos phalanges. Ne fonctionne pas sur les tartes explosives. Ne me demandez pas pourquoi."
     },
     {
         "name": "Trait de feu",
+        "name_en": "",
         "level": 0,
-        "school": "Evocation",
+        "school": "Évocation",
         "class": ["Ensorceleur", "Magicien"],
         "casting_time": "Action",
         "range": "36 m",
@@ -679,10 +701,12 @@
         "higher_levels": "<strong>Amélioration de sort mineur.</strong> Les dégâts augmentent de 1d10 lorsque vous atteignez les niveaux 5 (2d10), 11 (3d10) et 17 (4d10).",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Piqûre mentale",
+        "name_en": "",
         "level": 0,
         "school": "Enchantement",
         "class": ["Ensorceleur", "Occultiste", "Magicien"],
@@ -697,10 +721,12 @@
         "higher_levels": "<strong>Amélioration de sort mineur.</strong> Les dégâts augmentent de 1d6 lorsque vous atteignez les niveaux 5 (2d6), 11 (3d6) et 17 (4d6).",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Illusion Mineure",
+        "name_en": "",
         "level": 0,
         "school": "Illusion",
         "class": ["Barde", "Ensorceleur", "Occultiste", "Magicien"],
@@ -714,10 +740,12 @@
         "description": "Le lanceur de sorts crée un son ou l'image d'un objet à portée pendant une minute.<br><br><strong>Fin de l'illusion :</strong><br>Cette illusion se termine également si :<br>• Elle est révoquée au prix d'une action<br>• Ce sort est lancé une nouvelle fois<br><br><strong>Si l'illusion est un son :</strong><br>• Le volume peut aller d'un simple chuchotement à un cri<br>• Il peut s'agir de votre voix, de la voix de quelqu'un d'autre, du rugissement d'un lion, d'un roulement de tambours, ou tout autre son que vous choisissez<br>• Le son peut autant ne pas diminuer en intensité pendant la durée du sort qu'être discret et produit à différents instants dans cet intervalle de temps<br><br><strong>Si l'illusion est une image ou un objet :</strong><br>• Exemples : une chaise, des traces de pas boueuses ou un petit coffre<br>• Ne peut pas être plus large qu'un cube de 1,50 mètre d'arête<br>• Cette image ne peut produire de son, lumière, odeur ou tout autre effet sensoriel<br>• Une interaction physique avec l'image révèle l'illusion, car elle peut être traversée par n'importe quoi<br><br><strong>Détection de l'illusion :</strong><br>Si une créature utilise une action pour examiner le son ou l'image, elle peut comprendre qu'il s'agit d'une illusion grâce à un jet d'Intelligence (Investigation) contre le DD de sauvegarde de votre sort. Si une créature discerne l'illusion pour ce qu'elle est, l'illusion s'évanouit pour la créature.",
         "origin": "Player's Handbook (SRD)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Prestidigitation",
+        "name_en": "",
         "level": 0,
         "school": "Transmutation",
         "class": ["Barde", "Sorcier", "Magicien", "Ensorceleur"],
@@ -731,10 +759,12 @@
         "description": "Vous créez un effet magique dans la portée. Choisissez l'effet parmi les options ci-dessous. Si vous lancez ce sort plusieurs fois, vous pouvez avoir jusqu'à trois de ses effets non instantanés actifs en même temps.\n\nEffet sensoriel. Vous créez un effet sensoriel instantané et inoffensif, comme une pluie d’étincelles, un souffle de vent, des notes musicales faibles ou une odeur étrange. Jeu de feu. Vous allumez ou éteignez instantanément une bougie, une torche ou un petit feu de camp. Nettoyer ou salir. Vous nettoyez ou salissez instantanément un objet ne dépassant pas 1 pied cube. Sensation mineure. Vous refroidissez, réchauffez ou aromatisez jusqu’à 1 pied cube de matière non vivante pendant 1 heure. Marque magique. Vous faites apparaître une couleur, une petite marque ou un symbole sur un objet ou une surface pendant 1 heure. Création mineure. Vous créez un bibelot non magique ou une image illusoire qui peut tenir dans votre main. Cela dure jusqu'à la fin de votre prochain tour. Un bibelot ne peut infliger aucun dommage et n'a aucune valeur monétaire.",
         "origin": "Player's Handbook (SRD)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Façonnage de l'eau",
+        "name_en": "",
         "level": 0,
         "school": "Transmutation",
         "class": ["Druide", "Ensorceleur", "Magicien"],
@@ -748,10 +778,12 @@
         "description": "Choisissez un cube d'eau visible de 1,50 mètre d'arête dans la portée du sort.<br><br><strong>Vous pouvez alors le manipuler d'une des façons suivantes :</strong><br><br>• <strong>Déplacer l'eau :</strong> Vous déplacez instantanément ou modifiez le sens du courant selon vos directives jusqu'à 1,50 mètre dans n'importe quelle direction. Ce mouvement n'a pas assez de force pour causer des dégâts<br><br>• <strong>Animer l'eau :</strong> Vous pouvez faire apparaitre des formes simples dans l'eau et les animer selon vos instructions. Ce changement dure 1 heure<br><br>• <strong>Modifier l'apparence :</strong> Vous modifiez la couleur ou l'opacité de l'eau. L'eau doit être transformée de façon homogène. Ce changement dure 1 heure<br><br>• <strong>Geler l'eau :</strong> Vous gelez l'eau, à condition qu'elle ne contienne aucune créature. L'eau dégèle au bout de 1 heure<br><br><strong>Limitation :</strong><br>Si vous lancez ce sort plusieurs fois, vous ne pouvez avoir que deux de ces effets non-instantanés actifs à la fois, et vous pouvez en dissiper un en une action.",
         "origin": "Xanathar's Guide to Everything (XGE)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Éruption de lames",
+        "name_en": "",
         "level": 0,
         "school": "Invocation",
         "class": ["Ensorceleur", "Magicien", "Occultiste"],
@@ -766,12 +798,14 @@
         "higher_levels": "Les dégâts de ce sort augmentent de 1d6 lorsque vous atteignez les niveaux 5 (2d6), 11 (3d6) et 17 (4d6).",
         "origin": "Tasha's Cauldron of Everything",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Coup au but",
+        "name_en": "",
         "level": 0,
-        "school": "Evocation",
+        "school": "Évocation",
         "class": ["Barde", "Ensorceleur", "Magicien", "Occultiste"],
         "casting_time": "Action",
         "range": "Personnelle",
@@ -784,10 +818,12 @@
         "higher_levels": "Amélioration de sort mineur. Que vous infligez des dégâts radiants ou du type de dégâts normal de l'arme, les dégâts augmentent de 1d6 lorsque vous atteignez les niveaux 5 (2d6), 11 (3d6) et 17 (4d6).",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Absorption des éléments",
+        "name_en": "",
         "level": 1,
         "school": "Abjuration",
         "class": ["Druide", "Ensorceleur", "Magicien", "Rôdeur"],
@@ -802,10 +838,12 @@
         "higher_levels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 2 ou supérieur, les dégâts supplémentaires augmentent de 1d6 pour chaque niveau d'emplacement au-delà du niveau 1.",
         "origin": "Xanathar's Guide to Everything",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Alarme",
+        "name_en": "",
         "level": 1,
         "school": "Abjuration",
         "class": ["Rôdeur", "Magicien"],
@@ -820,10 +858,12 @@
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Compréhension des langues",
+        "name_en": "",
         "level": 1,
         "school": "Divination",
         "class": ["Barde", "Ensorceleur", "Occultiste", "Magicien"],
@@ -838,10 +878,12 @@
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Simulacre de vie",
+        "name_en": "",
         "level": 1,
         "school": "Nécromancie",
         "class": ["Ensorceleur", "Magicien"],
@@ -856,10 +898,12 @@
         "higher_levels": "Vous gagnez 5 points de vie temporaires supplémentaires pour chaque niveau d'emplacement de sort supérieur à 1.",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Feuille morte",
+        "name_en": "",
         "level": 1,
         "school": "Transmutation",
         "class": ["Barde", "Ensorceleur", "Magicien"],
@@ -874,10 +918,12 @@
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Appel de familier",
+        "name_en": "",
         "level": 1,
         "school": "Invocation",
         "class": ["Magicien"],
@@ -892,10 +938,12 @@
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Armure de mage",
+        "name_en": "",
         "level": 1,
         "school": "Abjuration",
         "class": ["Ensorceleur", "Magicien"],
@@ -910,10 +958,12 @@
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Projectile magique",
+        "name_en": "",
         "level": 1,
         "school": "Évocation",
         "class": ["Ensorceleur", "Magicien"],
@@ -928,10 +978,12 @@
         "higher_levels": "Le sort crée une fléchette supplémentaire pour chaque niveau d'emplacement de sort supérieur à 1.",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Bouclier",
+        "name_en": "",
         "level": 1,
         "school": "Abjuration",
         "class": ["Ensorceleur", "Magicien"],
@@ -946,10 +998,12 @@
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Image silencieuse",
+        "name_en": "",
         "level": 1,
         "school": "Illusion",
         "class": ["Barde", "Ensorceleur", "Magicien"],
@@ -964,10 +1018,12 @@
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Barbes argentées",
+        "name_en": "",
         "level": 1,
         "school": "Enchantement",
         "class": ["Barde", "Ensorceleur", "Magicien"],
@@ -982,10 +1038,12 @@
         "higher_levels": "",
         "origin": "Strixhaven: A Curriculum of Chaos",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     },
     {
         "name": "Sommeil",
+        "name_en": "",
         "level": 1,
         "school": "Enchantement",
         "class": ["Barde", "Ensorceleur", "Magicien"],
@@ -1000,7 +1058,8 @@
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
-        "learning_source": ""
+        "learning_source": "",
+        "comment": ""
     }
 ]
 
@@ -1045,6 +1104,11 @@
                     }
                     
                     this.spells = await response.json();
+                    // Ensure each spell has a comment property, even if empty
+                    this.spells = this.spells.map(spell => ({
+                        ...spell,
+                        comment: spell.comment || ""
+                    }));
                     console.log('Loaded spells from external file:', this.spells.length);
                     this.filteredSpells = [...this.spells];
                 } catch (error) {
@@ -1055,6 +1119,11 @@
                     if (spellDataElement) {
                         try {
                             this.spells = JSON.parse(spellDataElement.textContent);
+                            // Ensure each spell has a comment property, even if empty
+                            this.spells = this.spells.map(spell => ({
+                                ...spell,
+                                comment: spell.comment || ""
+                            }));
                             console.log('Loaded spells from embedded data:', this.spells.length);
                             this.filteredSpells = [...this.spells];
                         } catch (parseError) {
@@ -1210,7 +1279,7 @@
                     <div class="spell-card ${learnedStatus}" data-school="${spell.school}">
                         <div class="learned-status ${learnedStatus}">${learnedText}</div>
                         <div class="spell-header">
-                            <h3 class="spell-name">${spell.name}</h3>
+                            <h3 class="spell-name">${spell.name}${spell.name_en ? `<br><span class="spell-name-en">[${spell.name_en}]</span>` : ''}</h3>
                             <div class="spell-level level-${spell.level}">${levelText}</div>
                         </div>
                         
@@ -1244,6 +1313,8 @@
                         ${higherLevels}
                         
                         ${learningSource}
+                        
+                        ${spell.comment ? `<div class="spell-comment"><em>${spell.comment}</em></div>` : ''}
                         
                         <div class="spell-origin">${spell.origin}</div>
                     </div>
