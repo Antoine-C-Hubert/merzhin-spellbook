@@ -59,7 +59,7 @@
         }
 
         .book-spine::after {
-            content: 'LIVRE DE SORTS';
+            content: 'SPELLBOOK';
             position: absolute;
             top: 50%;
             left: 50%;
@@ -756,7 +756,7 @@
         "ritual": false,
         "reaction": false,
         "duration": "Jusqu'à 1 heure",
-        "description": "Vous créez un effet magique dans la portée. Choisissez l'effet parmi les options ci-dessous. Si vous lancez ce sort plusieurs fois, vous pouvez avoir jusqu'à trois de ses effets non instantanés actifs en même temps.\n\nEffet sensoriel. Vous créez un effet sensoriel instantané et inoffensif, comme une pluie d’étincelles, un souffle de vent, des notes musicales faibles ou une odeur étrange. Jeu de feu. Vous allumez ou éteignez instantanément une bougie, une torche ou un petit feu de camp. Nettoyer ou salir. Vous nettoyez ou salissez instantanément un objet ne dépassant pas 1 pied cube. Sensation mineure. Vous refroidissez, réchauffez ou aromatisez jusqu’à 1 pied cube de matière non vivante pendant 1 heure. Marque magique. Vous faites apparaître une couleur, une petite marque ou un symbole sur un objet ou une surface pendant 1 heure. Création mineure. Vous créez un bibelot non magique ou une image illusoire qui peut tenir dans votre main. Cela dure jusqu'à la fin de votre prochain tour. Un bibelot ne peut infliger aucun dommage et n'a aucune valeur monétaire.",
+        "description": "Vous créez un effet magique dans la portée. Choisissez l'effet parmi les options ci-dessous. Si vous lancez ce sort plusieurs fois, vous pouvez avoir jusqu'à trois de ses effets non instantanés actifs en même temps.\n\nEffet sensoriel. Vous créez un effet sensoriel instantané et inoffensif, comme une pluie d'étincelles, un souffle de vent, des notes musicales faibles ou une odeur étrange. Jeu de feu. Vous allumez ou éteignez instantanément une bougie, une torche ou un petit feu de camp. Nettoyer ou salir. Vous nettoyez ou salissez instantanément un objet ne dépassant pas 1 pied cube. Sensation mineure. Vous refroidissez, réchauffez ou aromatisez jusqu'à 1 pied cube de matière non vivante pendant 1 heure. Marque magique. Vous faites apparaître une couleur, une petite marque ou un symbole sur un objet ou une surface pendant 1 heure. Création mineure. Vous créez un bibelot non magique ou une image illusoire qui peut tenir dans votre main. Cela dure jusqu'à la fin de votre prochain tour. Un bibelot ne peut infliger aucun dommage et n'a aucune valeur monétaire.",
         "origin": "Player's Handbook (SRD)",
         "learned": false,
         "learning_source": "",
@@ -764,7 +764,7 @@
     },
     {
         "name": "Façonnage de l'eau",
-        "name_en": "",
+        "name_en": "Shape Water",
         "level": 0,
         "school": "Transmutation",
         "class": ["Druide", "Ensorceleur", "Magicien"],
@@ -777,9 +777,9 @@
         "duration": "Instantanée ou 1 heure",
         "description": "Choisissez un cube d'eau visible de 1,50 mètre d'arête dans la portée du sort.<br><br><strong>Vous pouvez alors le manipuler d'une des façons suivantes :</strong><br><br>• <strong>Déplacer l'eau :</strong> Vous déplacez instantanément ou modifiez le sens du courant selon vos directives jusqu'à 1,50 mètre dans n'importe quelle direction. Ce mouvement n'a pas assez de force pour causer des dégâts<br><br>• <strong>Animer l'eau :</strong> Vous pouvez faire apparaitre des formes simples dans l'eau et les animer selon vos instructions. Ce changement dure 1 heure<br><br>• <strong>Modifier l'apparence :</strong> Vous modifiez la couleur ou l'opacité de l'eau. L'eau doit être transformée de façon homogène. Ce changement dure 1 heure<br><br>• <strong>Geler l'eau :</strong> Vous gelez l'eau, à condition qu'elle ne contienne aucune créature. L'eau dégèle au bout de 1 heure<br><br><strong>Limitation :</strong><br>Si vous lancez ce sort plusieurs fois, vous ne pouvez avoir que deux de ces effets non-instantanés actifs à la fois, et vous pouvez en dissiper un en une action.",
         "origin": "Xanathar's Guide to Everything (XGE)",
-        "learned": false,
-        "learning_source": "",
-        "comment": ""
+        "learned": true,
+        "learning_source": "Librarian of Unseen University",
+        "comment": "Aussi exploitable que Prestidigitation : geler un cube d'eau et l'écraser sur quelqu'un, briser une serrure en la gelant, ériger un dôme de glace, bloquer un couloir, construire un pont par segments de 1,50 m… Si vous avez un tonneau d'eau et ce tour, vous avez une réponse à tout. Ce sort enterre ses équivalents élémentaires, et c'est bien mérité. Voir mon <a href=\"https://rpgbot.net/dnd5/characters/shape-water\" target=\"_blank\">Guide Pratique du Modelage de l'Eau</a> pour plus d'idées brillamment discutables."
     },
     {
         "name": "Éruption de lames",
@@ -1109,6 +1109,10 @@
                         ...spell,
                         comment: spell.comment || ""
                     }));
+                    
+                    // Sort spells: learned first, then by level, then alphabetically by French name
+                    this.sortSpells();
+                    
                     console.log('Loaded spells from external file:', this.spells.length);
                     this.filteredSpells = [...this.spells];
                 } catch (error) {
@@ -1124,6 +1128,10 @@
                                 ...spell,
                                 comment: spell.comment || ""
                             }));
+                            
+                            // Sort spells: learned first, then by level, then alphabetically by French name
+                            this.sortSpells();
+                            
                             console.log('Loaded spells from embedded data:', this.spells.length);
                             this.filteredSpells = [...this.spells];
                         } catch (parseError) {
@@ -1134,6 +1142,24 @@
                         this.handleLoadError();
                     }
                 }
+            }
+            
+            sortSpells() {
+                // Sort spells: learned first, then by level, then alphabetically by French name
+                this.spells.sort((a, b) => {
+                    // First, sort by learned status (learned first)
+                    if (a.learned !== b.learned) {
+                        return a.learned ? -1 : 1;
+                    }
+                    
+                    // Then, sort by level (ascending)
+                    if (a.level !== b.level) {
+                        return a.level - b.level;
+                    }
+                    
+                    // Finally, sort alphabetically by French name
+                    return a.name.localeCompare(b.name, 'fr');
+                });
             }
 
             handleLoadError() {
@@ -1206,7 +1232,10 @@
 
                     return matchesSearch && matchesLevel && matchesSchool && matchesClass && matchesLearned;
                 });
-
+                
+                // Make sure filtered spells maintain the same order
+                // No need to sort again - the original array is already sorted and filter preserves order
+                
                 this.renderSpells();
             }
 

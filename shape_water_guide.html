@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Façonner l'eau : Guide pratique pour magiciens étourdis</title>
+  <!-- Include Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            water: {
+              light: '#7dd3fc',
+              DEFAULT: '#0ea5e9',
+              dark: '#0369a1'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-900 text-gray-300 min-h-screen font-serif">
+  <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <header class="mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-water-light">Façonner l'eau : Guide pratique pour magiciens étourdis</h1>
+      <div class="w-24 h-1 bg-water mx-auto mb-6"></div>
+    </header>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-4 text-water-light">Introduction</h2>
+      <div class="space-y-4 text-lg">
+        <p>
+          Façonner l'eau est probablement mon tour préféré. Introduit dans le <strong class="text-water-light">Compagnon du joueur de l'Éveil élémentaire</strong>,
+          ce sort fait partie des quatre nouveaux tours élémentaires conçus pour permettre aux lanceurs de sorts de jouer aux apprentis élémentologues.
+          Parmi ces tours, Façonner l'eau est sans conteste le plus polyvalent et le plus sournoisement puissant. Mais pour le comprendre, il faut chausser ses bottes de pensée fluide.
+        </p>
+        <p>
+          Ce guide vous mènera dans des recoins insoupçonnés de votre esprit — oui, même celui où vous rangez les mauvaises décisions de personnage niveau 1.
+          Nous parlerons bien sûr des règles du jeu, mais aussi (hélas) de physique, de chimie et de quelques lois de la dynamique des fluides, parce qu'il s'avère que l'eau, c'est compliqué.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-12 bg-gray-800 p-6 rounded-lg">
+      <h2 class="text-2xl font-bold mb-4 text-water-light">Table des matières</h2>
+      <ul class="space-y-2 text-lg">
+        <li class="hover:text-water transition-colors">
+          <a href="#introduction">Introduction</a>
+        </li>
+        <li class="hover:text-water transition-colors">
+          <a href="#what-is-water">Qu'est-ce que l'eau ?</a>
+        </li>
+        <li class="hover:text-water transition-colors">
+          <a href="#water-physics">Physique de l'eau</a>
+        </li>
+        <li class="hover:text-water transition-colors">
+          <a href="#containers">Contenants usuels</a>
+        </li>
+        <li class="hover:text-water transition-colors">
+          <a href="#shape-water">Façonner l'eau</a>
+          <ul class="ml-6 mt-2 space-y-1">
+            <li class="hover:text-water transition-colors">• <a href="#move-water">Déplacer l'eau</a></li>
+            <li class="hover:text-water transition-colors">• <a href="#animate-water">Animer l'eau</a></li>
+            <li class="hover:text-water transition-colors">• <a href="#color-opacity">Couleur et opacité</a></li>
+            <li class="hover:text-water transition-colors">• <a href="#freeze-effect">L'effet avec la glace</a></li>
+          </ul>
+        </li>
+        <li class="hover:text-water transition-colors">
+          <a href="#finding-water">Où trouver toute cette eau ?</a>
+        </li>
+        <li class="hover:text-water transition-colors">
+          <a href="#combat">Utiliser Façonner l'eau en combat</a>
+          <ul class="ml-6 mt-2 space-y-1">
+            <li class="hover:text-water transition-colors">• <a href="#boiling-water">Eau bouillante</a></li>
+            <li class="hover:text-water transition-colors">• <a href="#ice-spikes">Pointes de sol</a></li>
+            <li class="hover:text-water transition-colors">• <a href="#rolling-sphere">Sphère roulante</a></li>
+            <li class="hover:text-water transition-colors">• <a href="#heavy-thing">Quelque chose de lourd</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="what-is-water" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-water-light border-b border-gray-700 pb-2">Qu'est-ce que l'eau ?</h2>
+      <div class="space-y-4 text-lg">
+        <p>
+          Question bête ? Peut-être. Nécessaire ? Absolument. Avoir une définition claire entre joueur et MJ est vital pour éviter des débats houleux sur la boue enchantée.
+        </p>
+        <p>
+          Ma définition : une substance liquide principalement composée d'eau, de viscosité normale (ni gel, ni confiture de prune démoniaque), et identifiable par le commun des mortels comme... de l'eau.
+        </p>
+      </div>
+    </section>
+
+    <section id="water-physics" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-water-light border-b border-gray-700 pb-2">Physique de l'eau</h2>
+      <div class="space-y-4 text-lg">
+        <p>
+          L'eau gèle à environ 0°C et bout à 100°C — sauf si vous jouez dans une dimension où les lois de la physique sont syndiquées. Petite subtilité : l'eau se dilate en gelant. Donc un cube de glace peut légèrement déborder de son cube de 1,5m de côté. Ne râlez pas, c'est de la science.
+        </p>
+      </div>
+    </section>
+
+    <section id="containers" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-water-light border-b border-gray-700 pb-2">Contenants usuels</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-gray-800 rounded-lg overflow-hidden">
+          <thead class="bg-gray-700">
+            <tr>
+              <th class="px-6 py-3 text-left">Contenant</th>
+              <th class="px-6 py-3 text-left">Litres</th>
+              <th class="px-6 py-3 text-left">Poids (en kg)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-700">
+            <tr class="hover:bg-gray-700 transition-colors">
+              <td class="px-6 py-4">Tonneau</td>
+              <td class="px-6 py-4">150</td>
+              <td class="px-6 py-4">150</td>
+            </tr>
+            <tr class="hover:bg-gray-700 transition-colors">
+              <td class="px-6 py-4">Seau</td>
+              <td class="px-6 py-4">11</td>
+              <td class="px-6 py-4">11</td>
+            </tr>
+            <tr class="hover:bg-gray-700 transition-colors">
+              <td class="px-6 py-4">Outre</td>
+              <td class="px-6 py-4">1,9</td>
+              <td class="px-6 py-4">1,9</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm italic mt-2">Poids du contenu uniquement. Le conteneur n'a pas signé pour ça.</p>
+    </section>
+
+    <section id="shape-water" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-water-light border-b border-gray-700 pb-2">Façonner l'eau – Les effets</h2>
+      <p class="mb-6 text-lg">
+        Le sort cible une "zone d'eau" dans un cube de 1,5m de côté à 9m de vous. Vous pouvez :
+      </p>
+
+      <div class="space-y-8">
+        <div id="move-water" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-water">• Déplacer l'eau</h3>
+          <p class="text-lg">
+            Déplacez l'eau de 1,5m dans n'importe quelle direction. C'est lent, non offensif, mais peut suffire pour verser de l'eau bouillante ou faire flotter un poisson indésirable.
+          </p>
+        </div>
+
+        <div id="animate-water" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-water">• Animer l'eau</h3>
+          <p class="text-lg">
+            Façonnez des formes simples (lettres, murs, ponts, échelles). Utile, artistique, et potentiellement destructeur si on ajoute de la glace.
+          </p>
+        </div>
+
+        <div id="color-opacity" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-water">• Couleur et opacité</h3>
+          <p class="text-lg">
+            Changez la couleur <em>ou</em> l'opacité de l'eau. Pratique pour tricher à un concours de vin, espionner une sirène ou camoufler un crapaud.
+          </p>
+        </div>
+
+        <div id="freeze-effect" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-water">• L'effet avec la glace</h3>
+          <p class="text-lg">
+            Glace instantanée. Vous voulez bloquer une porte ? Fait. Construire un pont ? Fait. Piéger quelqu'un dans un tonneau gelé ? Faites-vous plaisir.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="finding-water" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-water-light border-b border-gray-700 pb-2">Où trouver toute cette eau ?</h2>
+      <div class="space-y-4 text-lg">
+        <p>
+          Les outres et seaux sont bien, mais pour l'artillerie magique : <strong class="text-water-light">la carafe d'eau infinie</strong>. 114 litres par tour, avec un robinet magique. À combiner avec une formation en plomberie dimensionnelle.
+        </p>
+      </div>
+    </section>
+
+    <section id="combat" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-water-light border-b border-gray-700 pb-2">Utiliser Façonner l'eau en combat</h2>
+      <p class="mb-6 text-lg">
+        Ce sort n'est pas une arme. Mais si vous êtes inventif et que votre MJ a de l'humour noir, voici quelques idées...
+      </p>
+
+      <div class="space-y-8">
+        <div id="boiling-water" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-water">Eau bouillante</h3>
+          <p class="text-lg">
+            Dommages : de 1d10 (3,8 litres) à 8d10 (3800 litres). Jet de dextérité pour moitié. Résistance pour les élémentaires aquatiques, bien sûr.
+          </p>
+        </div>
+
+        <div id="ice-spikes" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-water">Pointes de sol</h3>
+          <p class="text-lg">
+            C'est du terrain difficile et douloureux. Pensez <em>caltrops</em> gelés. 1 dégât et malus de mouvement. Prévoir des chaussures.
+          </p>
+        </div>
+
+        <div id="rolling-sphere" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-water">Sphère roulante</h3>
+          <p class="text-lg">
+            Fabriquez une boule de glace géante et laissez-la faire le reste. Dommages entre 4d10 et 10d10 selon la vitesse. Jet de sauvegarde de dextérité recommandé.
+          </p>
+        </div>
+
+        <div id="heavy-thing" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-water">Quelque chose de lourd</h3>
+          <p class="text-lg mb-4">
+            Un cube de glace de 1,5m³ pèse ~1500kg. Largué de 3m, ça fait mal. Échelle de dégâts :
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full bg-gray-700 rounded-lg overflow-hidden">
+              <thead class="bg-gray-600">
+                <tr>
+                  <th class="px-6 py-3 text-left">Poids</th>
+                  <th class="px-6 py-3 text-left">Dégâts</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-600">
+                <tr class="hover:bg-gray-600 transition-colors">
+                  <td class="px-6 py-4">2,3 kg</td>
+                  <td class="px-6 py-4">1</td>
+                </tr>
+                <tr class="hover:bg-gray-600 transition-colors">
+                  <td class="px-6 py-4">4,5 kg</td>
+                  <td class="px-6 py-4">1d10</td>
+                </tr>
+                <tr class="hover:bg-gray-600 transition-colors">
+                  <td class="px-6 py-4">45 kg</td>
+                  <td class="px-6 py-4">2d10</td>
+                </tr>
+                <tr class="hover:bg-gray-600 transition-colors">
+                  <td class="px-6 py-4">450 kg</td>
+                  <td class="px-6 py-4">4d10</td>
+                </tr>
+                <tr class="hover:bg-gray-600 transition-colors">
+                  <td class="px-6 py-4">2270 kg</td>
+                  <td class="px-6 py-4">10d10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-16 pt-8 border-t border-gray-700 text-gray-400 text-center">
+      <p class="italic">
+        Ce guide a été sponsorisé par le conseil interplanaire de la glaciation inattendue, le département de météorologie avancée de l'université de l'Invisible, et la guilde des tonneaux sentients.
+      </p>
+      <div class="mt-4 text-water-light">
+        <span class="inline-block transform hover:rotate-12 transition-transform cursor-pointer">💧</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
