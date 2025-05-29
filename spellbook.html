@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livre de Sorts - Merzhin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Garamond', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #2c1810, #4a2c1a);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .book-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .book {
+            background: linear-gradient(145deg, #d4b896, #c19a6b);
+            border-radius: 15px;
+            box-shadow: 
+                0 0 30px rgba(0,0,0,0.5),
+                inset 0 0 20px rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="paper" patternUnits="userSpaceOnUse" width="100" height="100"><rect width="100" height="100" fill="%23f4f1e8"/><circle cx="20" cy="20" r="1" fill="%23e8e1d0" opacity="0.3"/><circle cx="80" cy="80" r="1" fill="%23e8e1d0" opacity="0.3"/><circle cx="60" cy="30" r="0.5" fill="%23d4c5a9" opacity="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23paper)"/></svg>') repeat;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .book-spine {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 60px;
+            background: linear-gradient(90deg, #8b4513, #a0522d, #8b4513);
+            border-radius: 15px 0 0 15px;
+            box-shadow: inset -10px 0 20px rgba(0,0,0,0.3);
+        }
+
+        .book-spine::after {
+            content: 'LIVRE DE SORTS';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: rotate(-90deg) translate(-50%, -50%);
+            transform-origin: center;
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 14px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        .book-content {
+            margin-left: 60px;
+            padding: 40px;
+            min-height: 600px;
+            background: linear-gradient(to bottom, #f9f6f0, #f4f1e8);
+        }
+
+        .book-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px double #8b4513;
+        }
+
+        .book-title {
+            font-size: 2.5em;
+            color: #8b4513;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .book-subtitle {
+            font-size: 1.2em;
+            color: #a0522d;
+            font-style: italic;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            border: 1px solid #d4af37;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            padding: 10px 15px;
+            border: 2px solid #8b4513;
+            border-radius: 25px;
+            font-size: 16px;
+            background: #fff;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .filter-select {
+            padding: 8px 12px;
+            border: 2px solid #8b4513;
+            border-radius: 5px;
+            background: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .spell-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .spell-card {
+            background: linear-gradient(145deg, #fff, #f8f5f0);
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 
+                0 4px 8px rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255,255,255,0.8);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spell-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--school-color, #8b4513), 
+                var(--school-color, #8b4513));
+        }
+
+        .spell-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 8px 16px rgba(0,0,0,0.2),
+                inset 0 1px 0 rgba(255,255,255,0.8);
+        }
+
+        .spell-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .spell-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #8b4513;
+            margin: 0;
+        }
+
+        .spell-level {
+            color: white;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .spell-level.level-0 {
+            background: #ffffff;
+            color: #333;
+            border: 2px solid #ddd;
+        }
+
+        .spell-level.level-1 {
+            background: linear-gradient(135deg, #ffffff, #ffd700);
+            color: #333;
+        }
+
+        .spell-level.level-2 {
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            color: white;
+        }
+
+        .spell-level.level-3 {
+            background: linear-gradient(135deg, #ff8c00, #228b22);
+            color: white;
+        }
+
+        .spell-level.level-4 {
+            background: linear-gradient(135deg, #228b22, #0066cc);
+            color: white;
+        }
+
+        .spell-level.level-5 {
+            background: linear-gradient(135deg, #0066cc, #800080);
+            color: white;
+        }
+
+        .spell-level.level-6 {
+            background: linear-gradient(135deg, #800080, #8b4513);
+            color: white;
+        }
+
+        .spell-level.level-7 {
+            background: linear-gradient(135deg, #8b4513, #000000);
+            color: white;
+        }
+
+        .spell-level.level-8 {
+            background: linear-gradient(135deg, #000000, #dc143c);
+            color: white;
+        }
+
+        .spell-level.level-9 {
+            background: #dc143c;
+            color: white;
+        }
+
+        .spell-school {
+            color: var(--school-color, #8b4513);
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .spell-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 2px;
+        }
+
+        .detail-value {
+            color: #333;
+        }
+
+        .spell-classes {
+            margin-bottom: 10px;
+        }
+
+        .class-tag {
+            display: inline-block;
+            background: rgba(139, 69, 19, 0.1);
+            color: #8b4513;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 4px;
+            margin-bottom: 2px;
+            border: 1px solid #d4af37;
+        }
+
+        .spell-description {
+            line-height: 1.6;
+            color: #2c1810;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .higher-levels {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #d4af37;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .spell-origin {
+            text-align: right;
+            font-size: 0.8em;
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        .learning-source {
+            background: rgba(40, 167, 69, 0.1);
+            padding: 8px;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .learning-source-label {
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 2px;
+        }
+
+        .spell-icons {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .spell-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .ritual-icon {
+            background: #6f42c1;
+            color: white;
+        }
+
+        .concentration-icon {
+            background: #fd7e14;
+            color: white;
+        }
+
+        .reaction-icon {
+            background: #dc3545;
+            color: white;
+        }
+
+        .ritual-icon::before {
+            content: "🕯️";
+            font-size: 0.9em;
+        }
+
+        .concentration-icon::before {
+            content: "🧠";
+            font-size: 0.9em;
+        }
+
+        .reaction-icon::before {
+            content: "⚡";
+            font-size: 0.9em;
+        }
+
+        .learned-status {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .learned-status.learned {
+            background: #28a745;
+            color: white;
+        }
+
+        .learned-status.not-learned {
+            background: #dc3545;
+            color: white;
+        }
+
+        .spell-card.not-learned {
+            opacity: 0.7;
+            position: relative;
+        }
+
+        .spell-card.not-learned::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(220, 53, 69, 0.1) 10px,
+                rgba(220, 53, 69, 0.1) 20px
+            );
+            pointer-events: none;
+        }
+
+        /* School colors */
+        .spell-card[data-school="Abjuration"] { --school-color: #4169E1; }
+        .spell-card[data-school="Invocation"] { --school-color: #DC143C; }
+        .spell-card[data-school="Divination"] { --school-color: #FFD700; }
+        .spell-card[data-school="Enchantement"] { --school-color: #FF69B4; }
+        .spell-card[data-school="Évocation"] { --school-color: #FF4500; }
+        .spell-card[data-school="Evocation"] { --school-color: #FF4500; }
+        .spell-card[data-school="Illusion"] { --school-color: #9370DB; }
+        .spell-card[data-school="Nécromancie"] { --school-color: #2F4F4F; }
+        .spell-card[data-school="Transmutation"] { --school-color: #228B22; }
+
+        .stats-container {
+            margin-bottom: 30px;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            flex-wrap: wrap;
+        }
+
+        .stats-bar.learned-stats {
+            background: rgba(40, 167, 69, 0.1);
+            border: 1px solid rgba(40, 167, 69, 0.3);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #8b4513;
+        }
+
+        .stat-label {
+            color: #a0522d;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .book-container {
+                margin: 10px;
+                padding: 10px;
+            }
+            
+            .book-content {
+                padding: 20px;
+                margin-left: 40px;
+            }
+            
+            .book-spine {
+                width: 40px;
+            }
+            
+            .spell-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+            
+            .search-box {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-container">
+        <div class="book">
+            <div class="book-spine"></div>
+            <div class="book-content">
+                <div class="book-header">
+                    <h1 class="book-title">Livre de Sorts</h1>
+                    <p class="book-subtitle">Grimoire de Merzhin</p>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stats-bar">
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-spells">0</div>
+                            <div class="stat-label">Total Sorts</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-cantrips">0</div>
+                            <div class="stat-label">Cantrips</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-level1">0</div>
+                            <div class="stat-label">Niveau 1</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-level2">0</div>
+                            <div class="stat-label">Niveau 2</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-level3">0</div>
+                            <div class="stat-label">Niveau 3</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-level4">0</div>
+                            <div class="stat-label">Niveau 4</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-level5">0</div>
+                            <div class="stat-label">Niveau 5</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-level6">0</div>
+                            <div class="stat-label">Niveau 6</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-level7">0</div>
+                            <div class="stat-label">Niveau 7</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-level8">0</div>
+                            <div class="stat-label">Niveau 8</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-level9">0</div>
+                            <div class="stat-label">Niveau 9</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-bar learned-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="learned-spells">0</div>
+                            <div class="stat-label">Sorts Appris</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="learned-cantrips">0</div>
+                            <div class="stat-label">Cantrips</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="learned-level1">0</div>
+                            <div class="stat-label">Niveau 1</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="learned-level2">0</div>
+                            <div class="stat-label">Niveau 2</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="learned-level3">0</div>
+                            <div class="stat-label">Niveau 3</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="learned-level4">0</div>
+                            <div class="stat-label">Niveau 4</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="learned-level5">0</div>
+                            <div class="stat-label">Niveau 5</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="learned-level6">0</div>
+                            <div class="stat-label">Niveau 6</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="learned-level7">0</div>
+                            <div class="stat-label">Niveau 7</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="learned-level8">0</div>
+                            <div class="stat-label">Niveau 8</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="learned-level9">0</div>
+                            <div class="stat-label">Niveau 9</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <input type="text" id="search" class="search-box" placeholder="Rechercher un sort...">
+                    
+                    <div class="filter-group">
+                        <select id="level-filter" class="filter-select">
+                            <option value="">Tous les niveaux</option>
+                            <option value="0">Cantrips</option>
+                            <option value="1">Niveau 1</option>
+                        </select>
+                        
+                        <select id="school-filter" class="filter-select">
+                            <option value="">Toutes les écoles</option>
+                        </select>
+                        
+                        <select id="class-filter" class="filter-select">
+                            <option value="">Toutes les classes</option>
+                        </select>
+                        
+                        <select id="learned-filter" class="filter-select">
+                            <option value="">Tous les sorts</option>
+                            <option value="learned">Sorts appris</option>
+                            <option value="not-learned">Sorts non appris</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="spell-grid" id="spell-grid">
+                    <!-- Spells will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Embedded spell data as fallback -->
+    <script type="application/json" id="spell-data">
+[
+    {
+        "name": "Main de mage",
+        "level": 0,
+        "school": "Invocation",
+        "class": ["Barde", "Ensorceleur", "Occultiste", "Magicien"],
+        "casting_time": "Action",
+        "range": "9 m",
+        "components": ["V", "S"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": false,
+        "duration": "1 minute",
+        "description": "Une main spectrale et flottante apparaît à un endroit que vous choisissez à portée. La main reste active pendant toute la durée du sort. Elle disparaît si elle s'éloigne de vous de plus de 9 mètres ou si vous relancez ce sort.<br><br><strong>Utilisation initiale :</strong><br>Lorsque vous lancez ce sort, vous pouvez utiliser la main pour :<br>• Manipuler un objet<br>• Ouvrir une porte ou un contenant déverrouillé<br>• Ranger ou récupérer un objet d'un contenant ouvert<br>• Vider le contenu d'une fiole<br><br><strong>Tours ultérieurs :</strong><br>Par une action Magie lors de vos tours ultérieurs, vous pouvez continuer de contrôler la main ainsi. Cette action vous permet de déplacer la main jusqu'à 9 mètres.<br><br><strong>Limitations :</strong><br>La main ne peut pas attaquer, ni activer des objets magiques, ni porter plus de 5 kg.",
+        "higher_levels": "",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": true,
+        "learning_source": "Unseen University"
+    },
+    {
+        "name": "Trait de feu",
+        "level": 0,
+        "school": "Evocation",
+        "class": ["Ensorceleur", "Magicien"],
+        "casting_time": "Action",
+        "range": "36 m",
+        "components": ["V", "S"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": false,
+        "duration": "Instantanée",
+        "description": "Vous lancez une particule de feu sur une créature ou un objet à portée.<br><br><strong>Attaque :</strong><br>Effectuez une attaque de sort à distance contre la cible.<br><br><strong>En cas de succès :</strong><br>• La cible subit 1d10 dégâts de feu<br>• Un objet inflammable touché par ce sort commence à brûler s'il n'est pas porté",
+        "higher_levels": "<strong>Amélioration de sort mineur.</strong> Les dégâts augmentent de 1d10 lorsque vous atteignez les niveaux 5 (2d10), 11 (3d10) et 17 (4d10).",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Piqûre mentale",
+        "level": 0,
+        "school": "Enchantement",
+        "class": ["Ensorceleur", "Occultiste", "Magicien"],
+        "casting_time": "Action",
+        "range": "18 m",
+        "components": ["V"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": false,
+        "duration": "1 round",
+        "description": "Vous essayez de rompre temporairement l'esprit d'une créature que vous pouvez voir à portée.<br><br><strong>Jet de sauvegarde :</strong><br>La cible doit réussir un jet de sauvegarde d'Intelligence.<br><br><strong>En cas d'échec :</strong><br>• Subit 1d6 dégâts psychiques<br>• Soustrait 1d4 du prochain jet de sauvegarde qu'elle effectue avant la fin de votre prochain tour",
+        "higher_levels": "<strong>Amélioration de sort mineur.</strong> Les dégâts augmentent de 1d6 lorsque vous atteignez les niveaux 5 (2d6), 11 (3d6) et 17 (4d6).",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Illusion Mineure",
+        "level": 0,
+        "school": "Illusion",
+        "class": ["Barde", "Ensorceleur", "Occultiste", "Magicien"],
+        "casting_time": "Action",
+        "range": "9 m",
+        "components": ["S", "M (un peu de laine brute)"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": false,
+        "duration": "1 minute",
+        "description": "Le lanceur de sorts crée un son ou l'image d'un objet à portée pendant une minute.<br><br><strong>Fin de l'illusion :</strong><br>Cette illusion se termine également si :<br>• Elle est révoquée au prix d'une action<br>• Ce sort est lancé une nouvelle fois<br><br><strong>Si l'illusion est un son :</strong><br>• Le volume peut aller d'un simple chuchotement à un cri<br>• Il peut s'agir de votre voix, de la voix de quelqu'un d'autre, du rugissement d'un lion, d'un roulement de tambours, ou tout autre son que vous choisissez<br>• Le son peut autant ne pas diminuer en intensité pendant la durée du sort qu'être discret et produit à différents instants dans cet intervalle de temps<br><br><strong>Si l'illusion est une image ou un objet :</strong><br>• Exemples : une chaise, des traces de pas boueuses ou un petit coffre<br>• Ne peut pas être plus large qu'un cube de 1,50 mètre d'arête<br>• Cette image ne peut produire de son, lumière, odeur ou tout autre effet sensoriel<br>• Une interaction physique avec l'image révèle l'illusion, car elle peut être traversée par n'importe quoi<br><br><strong>Détection de l'illusion :</strong><br>Si une créature utilise une action pour examiner le son ou l'image, elle peut comprendre qu'il s'agit d'une illusion grâce à un jet d'Intelligence (Investigation) contre le DD de sauvegarde de votre sort. Si une créature discerne l'illusion pour ce qu'elle est, l'illusion s'évanouit pour la créature.",
+        "origin": "Player's Handbook (SRD)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Prestidigitation",
+        "level": 0,
+        "school": "Transmutation",
+        "class": ["Barde", "Sorcier", "Magicien", "Ensorceleur"],
+        "casting_time": "Action",
+        "range": "3 m (10 feet)",
+        "components": ["V", "S"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": false,
+        "duration": "Jusqu'à 1 heure",
+        "description": "Vous créez un effet magique dans la portée. Choisissez l'effet parmi les options ci-dessous. Si vous lancez ce sort plusieurs fois, vous pouvez avoir jusqu'à trois de ses effets non instantanés actifs en même temps.\n\nEffet sensoriel. Vous créez un effet sensoriel instantané et inoffensif, comme une pluie d’étincelles, un souffle de vent, des notes musicales faibles ou une odeur étrange. Jeu de feu. Vous allumez ou éteignez instantanément une bougie, une torche ou un petit feu de camp. Nettoyer ou salir. Vous nettoyez ou salissez instantanément un objet ne dépassant pas 1 pied cube. Sensation mineure. Vous refroidissez, réchauffez ou aromatisez jusqu’à 1 pied cube de matière non vivante pendant 1 heure. Marque magique. Vous faites apparaître une couleur, une petite marque ou un symbole sur un objet ou une surface pendant 1 heure. Création mineure. Vous créez un bibelot non magique ou une image illusoire qui peut tenir dans votre main. Cela dure jusqu'à la fin de votre prochain tour. Un bibelot ne peut infliger aucun dommage et n'a aucune valeur monétaire.",
+        "origin": "Player's Handbook (SRD)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Façonnage de l'eau",
+        "level": 0,
+        "school": "Transmutation",
+        "class": ["Druide", "Ensorceleur", "Magicien"],
+        "casting_time": "Action",
+        "range": "9 m",
+        "components": ["S"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": false,
+        "duration": "Instantanée ou 1 heure",
+        "description": "Choisissez un cube d'eau visible de 1,50 mètre d'arête dans la portée du sort.<br><br><strong>Vous pouvez alors le manipuler d'une des façons suivantes :</strong><br><br>• <strong>Déplacer l'eau :</strong> Vous déplacez instantanément ou modifiez le sens du courant selon vos directives jusqu'à 1,50 mètre dans n'importe quelle direction. Ce mouvement n'a pas assez de force pour causer des dégâts<br><br>• <strong>Animer l'eau :</strong> Vous pouvez faire apparaitre des formes simples dans l'eau et les animer selon vos instructions. Ce changement dure 1 heure<br><br>• <strong>Modifier l'apparence :</strong> Vous modifiez la couleur ou l'opacité de l'eau. L'eau doit être transformée de façon homogène. Ce changement dure 1 heure<br><br>• <strong>Geler l'eau :</strong> Vous gelez l'eau, à condition qu'elle ne contienne aucune créature. L'eau dégèle au bout de 1 heure<br><br><strong>Limitation :</strong><br>Si vous lancez ce sort plusieurs fois, vous ne pouvez avoir que deux de ces effets non-instantanés actifs à la fois, et vous pouvez en dissiper un en une action.",
+        "origin": "Xanathar's Guide to Everything (XGE)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Éruption de lames",
+        "level": 0,
+        "school": "Invocation",
+        "class": ["Ensorceleur", "Magicien", "Occultiste"],
+        "casting_time": "Action",
+        "range": "Personnelle (rayon de 1,50 m)",
+        "components": ["V"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": false,
+        "duration": "Instantanée",
+        "description": "Vous créez temporairement un cercle de lames spectrales autour de vous.<br><br><strong>Effet :</strong><br>Toutes les autres créatures dans un rayon de 1,50 mètre autour de vous doivent réussir un jet de sauvegarde de Dextérité ou subir 1d6 dégâts de force.",
+        "higher_levels": "Les dégâts de ce sort augmentent de 1d6 lorsque vous atteignez les niveaux 5 (2d6), 11 (3d6) et 17 (4d6).",
+        "origin": "Tasha's Cauldron of Everything",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Coup au but",
+        "level": 0,
+        "school": "Evocation",
+        "class": ["Barde", "Ensorceleur", "Magicien", "Occultiste"],
+        "casting_time": "Action",
+        "range": "Personnelle",
+        "components": ["S", "M (une arme dont vous avez la maîtrise, d'une valeur minimale de 1 pc)"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": false,
+        "duration": "Instantanée",
+        "description": "Guidé par un éclair magique, vous effectuez une attaque avec l'arme utilisée pour lancer le sort.<br><br><strong>Mécaniques d'attaque :</strong><br>• L'attaque utilise votre caractéristique d'incantation pour les jets d'attaque et de dégâts, au lieu d'utiliser la Force ou la Dextérité<br>• Si l'attaque inflige des dégâts, ceux-ci peuvent être radiants ou du type de dégâts normal de l'arme (selon votre choix)",
+        "higher_levels": "Amélioration de sort mineur. Que vous infligez des dégâts radiants ou du type de dégâts normal de l'arme, les dégâts augmentent de 1d6 lorsque vous atteignez les niveaux 5 (2d6), 11 (3d6) et 17 (4d6).",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Absorption des éléments",
+        "level": 1,
+        "school": "Abjuration",
+        "class": ["Druide", "Ensorceleur", "Magicien", "Rôdeur"],
+        "casting_time": "Réaction, que vous prenez lorsque vous subissez des dégâts d'acide, de froid, de feu, de foudre ou de tonnerre",
+        "range": "Personnelle",
+        "components": ["S"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": true,
+        "duration": "1 round",
+        "description": "Le sort capte une partie de l'énergie entrante, ce qui réduit son effet sur vous et la stocke pour votre prochaine attaque au corps à corps.<br><br><strong>Effets immédiats :</strong><br>• Vous obtenez une résistance à ce type de dégâts jusqu'au début de votre prochain tour<br><br><strong>Effet retardé :</strong><br>• La première fois que vous touchez avec une attaque au corps à corps lors de votre prochain tour, la cible subit 1d6 dégâts supplémentaires du type d'élément ciblé, et le sort se termine",
+        "higher_levels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 2 ou supérieur, les dégâts supplémentaires augmentent de 1d6 pour chaque niveau d'emplacement au-delà du niveau 1.",
+        "origin": "Xanathar's Guide to Everything",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Alarme",
+        "level": 1,
+        "school": "Abjuration",
+        "class": ["Rôdeur", "Magicien"],
+        "casting_time": "1 minute ou Rituel",
+        "range": "9 m",
+        "components": ["V", "S", "M (une cloche et du fil d'argent)"],
+        "concentration": false,
+        "ritual": true,
+        "reaction": false,
+        "duration": "8 heures",
+        "description": "Vous placez une alarme contre les intrusions. Choisissez une porte, une fenêtre ou une zone à portée qui ne dépasse pas un cube de 6 mètres.<br><br><strong>Fonctionnement :</strong><br>• Jusqu'à la fin du sort, une alarme vous alerte chaque fois qu'une créature touche ou pénètre dans la zone protégée<br>• Lorsque vous lancez le sort, vous pouvez désigner des créatures qui ne déclencheront pas l'alarme<br><br><strong>Types d'alarme :</strong><br>Vous choisissez si l'alarme est audible ou mentale :<br><br>• <strong>Alarme audible :</strong> L'alarme produit le son d'une clochette pendant 10 secondes dans un rayon de 18 mètres de la zone protégée<br><br>• <strong>Alarme mentale :</strong> Vous êtes alerté par un signal mental si vous êtes dans un rayon de 1,5 kilomètre de la zone protégée. Ce signal vous réveille si vous dormez",
+        "higher_levels": "",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Compréhension des langues",
+        "level": 1,
+        "school": "Divination",
+        "class": ["Barde", "Ensorceleur", "Occultiste", "Magicien"],
+        "casting_time": "Action ou Rituel",
+        "range": "Personnelle",
+        "components": ["V", "S", "M (une pincée de suie et de sel)"],
+        "concentration": false,
+        "ritual": true,
+        "reaction": false,
+        "duration": "1 heure",
+        "description": "Pendant toute la durée du sort, vous comprenez le sens littéral de toute langue que vous entendez ainsi que le langage des signes.<br><br><strong>Langues écrites :</strong><br>• Vous comprenez également toute langue écrite que vous voyez, mais vous devez toucher la surface sur laquelle les mots sont écrits<br>• Il faut environ une minute pour lire une page de texte<br><br><strong>Limitation :</strong><br>Ce sort ne décode pas les symboles ni les messages secrets",
+        "higher_levels": "",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Simulacre de vie",
+        "level": 1,
+        "school": "Nécromancie",
+        "class": ["Ensorceleur", "Magicien"],
+        "casting_time": "Action",
+        "range": "Personnelle",
+        "components": ["V", "S", "M (une goutte d'alcool)"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": false,
+        "duration": "Instantanée",
+        "description": "<strong>Effet :</strong><br>Vous gagnez 2d4 + 4 points de vie temporaires.",
+        "higher_levels": "Vous gagnez 5 points de vie temporaires supplémentaires pour chaque niveau d'emplacement de sort supérieur à 1.",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Feuille morte",
+        "level": 1,
+        "school": "Transmutation",
+        "class": ["Barde", "Ensorceleur", "Magicien"],
+        "casting_time": "Réaction, que vous prenez lorsque vous ou une créature que vous pouvez voir dans un rayon de 18 m tombe",
+        "range": "18 m",
+        "components": ["V", "M (une petite plume ou un morceau de duvet)"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": true,
+        "duration": "1 minute",
+        "description": "Choisissez jusqu'à cinq créatures en chute libre à portée.<br><br><strong>Effet :</strong><br>• La vitesse de chute d'une créature est réduite à 18 mètres par round jusqu'à la fin du sort<br>• Si une créature atterrit avant la fin du sort, elle ne subit aucun dégât de la chute et le sort prend fin pour elle",
+        "higher_levels": "",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Appel de familier",
+        "level": 1,
+        "school": "Invocation",
+        "class": ["Magicien"],
+        "casting_time": "1 heure ou Rituel",
+        "range": "3 m",
+        "components": ["V", "S", "M (encens en combustion d'une valeur de 10+ po, que le sort consomme)"],
+        "concentration": false,
+        "ritual": true,
+        "reaction": false,
+        "duration": "Instantanée",
+        "description": "Vous obtenez les services d'un familier, un esprit qui prend une forme animale de votre choix.<br><br><strong>Formes disponibles :</strong><br>Chauve-souris, Chat, Grenouille, Faucon, Lézard, Pieuvre, Chouette, Rat, Corbeau, Araignée, Belette, ou une autre Bête qui a un facteur de puissance de 0.<br><br><strong>Caractéristiques du familier :</strong><br>• Apparaît dans un espace inoccupé à portée<br>• A les statistiques de la forme choisie<br>• Est un Céleste, une Fée ou un Fiélon (votre choix) au lieu d'une Bête<br>• Agit indépendamment de vous, mais obéit à vos ordres<br><br><strong>Connexion télépathique :</strong><br>• Communication télépathique dans un rayon de 30 mètres<br>• Par une action bonus : voir à travers ses yeux et entendre ce qu'il entend jusqu'au début de votre prochain tour (bénéficiant de tous ses sens spéciaux)<br>• Peut délivrer vos sorts de contact (dans un rayon de 30 mètres, en prenant une réaction)<br><br><strong>Combat :</strong><br>• Le familier est un allié pour vous et vos alliés<br>• Lance sa propre Initiative et agit à son propre tour<br>• Ne peut pas attaquer, mais peut effectuer d'autres actions normalement<br><br><strong>Disparition et rappel :</strong><br>• Disparaît quand il tombe à 0 point de vie (réapparaît en relançant ce sort)<br>• Peut être temporairement renvoyé dans une dimension de poche (action de Magie)<br>• Peut être rappelé dans un espace inoccupé dans un rayon de 9 mètres (action de Magie)<br>• Laisse derrière lui tout ce qu'il portait ou transportait quand il disparaît<br><br><strong>Limitation :</strong><br>Vous ne pouvez pas avoir plus d'un familier à la fois. Si vous lancez ce sort alors que vous avez un familier, vous lui faites adopter une nouvelle forme éligible.",
+        "higher_levels": "",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Armure de mage",
+        "level": 1,
+        "school": "Abjuration",
+        "class": ["Ensorceleur", "Magicien"],
+        "casting_time": "Action",
+        "range": "Contact",
+        "components": ["V", "S", "M (un morceau de cuir tanné)"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": false,
+        "duration": "8 heures",
+        "description": "Vous touchez une créature consentante qui ne porte pas d'armure.<br><br><strong>Effet :</strong><br>• La CA de base de la cible passe à 13, plus son modificateur de Dextérité<br>• Dure jusqu'à la fin du sort<br><br><strong>Fin prématurée :</strong><br>Le sort prend fin si la cible porte une armure.",
+        "higher_levels": "",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Projectile magique",
+        "level": 1,
+        "school": "Évocation",
+        "class": ["Ensorceleur", "Magicien"],
+        "casting_time": "Action",
+        "range": "36 m",
+        "components": ["V", "S"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": false,
+        "duration": "Instantanée",
+        "description": "Vous créez trois fléchettes lumineuses de force magique.<br><br><strong>Ciblage :</strong><br>• Chaque fléchette touche une créature de votre choix que vous pouvez voir et à portée<br>• Les fléchettes frappent toutes simultanément<br>• Vous pouvez les diriger pour toucher une ou plusieurs créatures<br><br><strong>Dégâts :</strong><br>Une fléchette inflige 1d4 + 1 point de dégâts de force à sa cible.",
+        "higher_levels": "Le sort crée une fléchette supplémentaire pour chaque niveau d'emplacement de sort supérieur à 1.",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Bouclier",
+        "level": 1,
+        "school": "Abjuration",
+        "class": ["Ensorceleur", "Magicien"],
+        "casting_time": "Réaction, que vous prenez lorsque vous êtes touché par un jet d'attaque ou ciblé par le sort Projectile magique",
+        "range": "Personnelle",
+        "components": ["V", "S"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": true,
+        "duration": "1 round",
+        "description": "Une barrière imperceptible de force magique vous protège.<br><br><strong>Effets jusqu'au début de votre prochain tour :</strong><br>• Bonus de +5 à la CA (y compris contre l'attaque déclenchante)<br>• Immunité aux dégâts de Projectile Magique",
+        "higher_levels": "",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Image silencieuse",
+        "level": 1,
+        "school": "Illusion",
+        "class": ["Barde", "Ensorceleur", "Magicien"],
+        "casting_time": "Action",
+        "range": "18 m",
+        "components": ["V", "S", "M (un peu de laine)"],
+        "concentration": true,
+        "ritual": false,
+        "reaction": false,
+        "duration": "Concentration, jusqu'à 10 minutes",
+        "description": "Vous créez l'image d'un objet, d'une créature ou d'un autre phénomène visible.<br><br><strong>Caractéristiques de l'image :</strong><br>• Ne dépasse pas un cube de 4,5 mètres de côté<br>• Apparaît à un endroit à portée<br>• Persiste pendant toute la durée du sort<br>• Purement visuelle (aucun son, odeur ou autre effet sensoriel)<br><br><strong>Contrôle de l'image :</strong><br>• Par une action Magie : déplacer l'image n'importe où à portée<br>• Lors du déplacement : modifier son apparence pour que ses mouvements paraissent naturels<br>• Exemple : faire marcher l'image d'une créature quand vous la déplacez<br><br><strong>Détection de l'illusion :</strong><br>• Interaction physique : révèle l'illusion (les objets peuvent la traverser)<br>• Action Étude : jet d'Intelligence (Investigation) contre le DD de sauvegarde de votre sort<br>• En cas de réussite : la créature peut voir à travers l'image",
+        "higher_levels": "",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Barbes argentées",
+        "level": 1,
+        "school": "Enchantement",
+        "class": ["Barde", "Ensorceleur", "Magicien"],
+        "casting_time": "1 réaction, que vous prenez lorsqu'une créature que vous pouvez voir dans un rayon de 18 mètres de vous réussit un jet d'attaque, un test de caractéristique ou un jet de sauvegarde",
+        "range": "18 m",
+        "components": ["V"],
+        "concentration": false,
+        "ritual": false,
+        "reaction": true,
+        "duration": "Instantanée",
+        "description": "Vous distrayez magiquement la créature déclenchante et transformez son incertitude momentanée en encouragement pour une autre créature.<br><br><strong>Effet sur la créature déclenchante :</strong><br>• Doit relancer le d20 et utiliser le résultat le plus bas<br><br><strong>Effet d'encouragement :</strong><br>• Vous choisissez une créature différente que vous pouvez voir à portée (vous pouvez vous choisir)<br>• La créature choisie a l'avantage sur le prochain jet d'attaque, test de caractéristique ou jet de sauvegarde qu'elle effectue dans la minute suivante<br><br><strong>Limitation :</strong><br>Une créature ne peut être renforcée que par une seule utilisation de ce sort à la fois.",
+        "higher_levels": "",
+        "origin": "Strixhaven: A Curriculum of Chaos",
+        "learned": false,
+        "learning_source": ""
+    },
+    {
+        "name": "Sommeil",
+        "level": 1,
+        "school": "Enchantement",
+        "class": ["Barde", "Ensorceleur", "Magicien"],
+        "casting_time": "Action",
+        "range": "18 m",
+        "components": ["V", "S", "M (une pincée de sable ou des pétales de rose)"],
+        "concentration": true,
+        "ritual": false,
+        "reaction": false,
+        "duration": "Concentration, jusqu'à 1 minute",
+        "description": "Toute créature de votre choix dans une sphère de 1,50 m de rayon centrée sur un point à portée doit réussir un jet de sauvegarde de Sagesse.<br><br><strong>Échec au premier jet :</strong><br>• État Incapable d'agir jusqu'à la fin de son prochain tour<br>• Doit refaire le jet de sauvegarde<br><br><strong>Échec au deuxième jet :</strong><br>• État Inconscient pendant toute la durée du sort<br><br><strong>Fin prématurée du sort :</strong><br>• Si une cible subit des dégâts<br>• Si une personne dans un rayon de 1,50 m entreprend une action pour la libérer<br><br><strong>Immunités :</strong><br>Les créatures qui ne dorment pas (comme les elfes) ou qui sont immunisées contre l'état Épuisement réussissent automatiquement leurs jets de sauvegarde.",
+        "higher_levels": "",
+        "origin": "Player's Handbook 2024 (BR)",
+        "learned": false,
+        "learning_source": ""
+    }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    <script>
+        class SpellbookApp {
+            constructor() {
+                this.spells = [];
+                this.filteredSpells = [];
+                this.init();
+            }
+
+            async init() {
+                await this.loadSpells();
+                this.setupEventListeners();
+                this.populateFilters();
+                this.updateStats();
+                this.renderSpells();
+            }
+
+            async loadSpells() {
+                try {
+                    console.log('Loading spells from spellbook.json...');
+                    const response = await fetch('spellbook.json');
+                    console.log('Response status:', response.status);
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    
+                    this.spells = await response.json();
+                    console.log('Loaded spells from external file:', this.spells.length);
+                    this.filteredSpells = [...this.spells];
+                } catch (error) {
+                    console.log('Could not load external JSON, using embedded data fallback');
+                    
+                    // Fallback: Load from embedded script tag
+                    const spellDataElement = document.getElementById('spell-data');
+                    if (spellDataElement) {
+                        try {
+                            this.spells = JSON.parse(spellDataElement.textContent);
+                            console.log('Loaded spells from embedded data:', this.spells.length);
+                            this.filteredSpells = [...this.spells];
+                        } catch (parseError) {
+                            console.error('Error parsing embedded spell data:', parseError);
+                            this.handleLoadError();
+                        }
+                    } else {
+                        this.handleLoadError();
+                    }
+                }
+            }
+
+            handleLoadError() {
+                document.getElementById('spell-grid').innerHTML = 
+                    `<p style="text-align: center; color: #8b4513; font-size: 1.2em; grid-column: 1/-1;">
+                        Erreur lors du chargement du livre de sorts.<br>
+                        <small>Pour utiliser le fichier JSON externe, servez cette page via un serveur web.<br>
+                        Commande: <code>python3 -m http.server 8000</code> puis ouvrez <code>http://localhost:8000/spellbook.html</code></small>
+                    </p>`;
+            }
+
+            setupEventListeners() {
+                document.getElementById('search').addEventListener('input', (e) => {
+                    this.filterSpells();
+                });
+
+                document.getElementById('level-filter').addEventListener('change', () => {
+                    this.filterSpells();
+                });
+
+                document.getElementById('school-filter').addEventListener('change', () => {
+                    this.filterSpells();
+                });
+
+                document.getElementById('class-filter').addEventListener('change', () => {
+                    this.filterSpells();
+                });
+
+                document.getElementById('learned-filter').addEventListener('change', () => {
+                    this.filterSpells();
+                });
+            }
+
+            populateFilters() {
+                const schools = [...new Set(this.spells.map(spell => spell.school))].sort();
+                const schoolFilter = document.getElementById('school-filter');
+                schools.forEach(school => {
+                    const option = document.createElement('option');
+                    option.value = school;
+                    option.textContent = school;
+                    schoolFilter.appendChild(option);
+                });
+
+                const classes = [...new Set(this.spells.flatMap(spell => spell.class))].sort();
+                const classFilter = document.getElementById('class-filter');
+                classes.forEach(cls => {
+                    const option = document.createElement('option');
+                    option.value = cls;
+                    option.textContent = cls;
+                    classFilter.appendChild(option);
+                });
+            }
+
+            filterSpells() {
+                const searchTerm = document.getElementById('search').value.toLowerCase();
+                const levelFilter = document.getElementById('level-filter').value;
+                const schoolFilter = document.getElementById('school-filter').value;
+                const classFilter = document.getElementById('class-filter').value;
+                const learnedFilter = document.getElementById('learned-filter').value;
+
+                this.filteredSpells = this.spells.filter(spell => {
+                    const matchesSearch = spell.name.toLowerCase().includes(searchTerm) ||
+                                        spell.description.toLowerCase().includes(searchTerm);
+                    const matchesLevel = !levelFilter || spell.level.toString() === levelFilter;
+                    const matchesSchool = !schoolFilter || spell.school === schoolFilter;
+                    const matchesClass = !classFilter || spell.class.includes(classFilter);
+                    const matchesLearned = !learnedFilter || 
+                                         (learnedFilter === 'learned' && spell.learned) ||
+                                         (learnedFilter === 'not-learned' && !spell.learned);
+
+                    return matchesSearch && matchesLevel && matchesSchool && matchesClass && matchesLearned;
+                });
+
+                this.renderSpells();
+            }
+
+            updateStats() {
+                const totalSpells = this.spells.length;
+                const learnedSpells = this.spells.filter(spell => spell.learned).length;
+
+                // Update total counts
+                document.getElementById('total-spells').textContent = totalSpells;
+                document.getElementById('learned-spells').textContent = learnedSpells;
+
+                // Update total counts by level (0-9)
+                for (let level = 0; level <= 9; level++) {
+                    const totalAtLevel = this.spells.filter(spell => spell.level === level).length;
+                    const learnedAtLevel = this.spells.filter(spell => spell.level === level && spell.learned).length;
+                    
+                    const totalElement = level === 0 ? 
+                        document.getElementById('total-cantrips') : 
+                        document.getElementById(`total-level${level}`);
+                    const learnedElement = level === 0 ? 
+                        document.getElementById('learned-cantrips') : 
+                        document.getElementById(`learned-level${level}`);
+                    
+                    if (totalElement) totalElement.textContent = totalAtLevel;
+                    if (learnedElement) learnedElement.textContent = learnedAtLevel;
+                }
+            }
+
+            renderSpells() {
+                const spellGrid = document.getElementById('spell-grid');
+                
+                if (this.filteredSpells.length === 0) {
+                    spellGrid.innerHTML = '<p style="text-align: center; color: #8b4513; font-size: 1.2em; grid-column: 1/-1;">Aucun sort trouvé.</p>';
+                    return;
+                }
+
+                spellGrid.innerHTML = this.filteredSpells.map(spell => this.createSpellCard(spell)).join('');
+            }
+
+            createSpellCard(spell) {
+                const levelText = spell.level === 0 ? 'Cantrip' : `Niveau ${spell.level}`;
+                const components = spell.components.join(', ');
+                const classes = spell.class.map(cls => `<span class="class-tag">${cls}</span>`).join('');
+                const higherLevels = spell.higher_levels ? 
+                    `<div class="higher-levels"><strong>Aux niveaux supérieurs:</strong> ${spell.higher_levels}</div>` : '';
+                const learnedStatus = spell.learned ? 'learned' : 'not-learned';
+                const learnedText = spell.learned ? 'Appris' : 'Non Appris';
+                
+                // Create icons for ritual, concentration, and reaction
+                const icons = [];
+                if (spell.ritual) {
+                    icons.push('<span class="spell-icon ritual-icon">Rituel</span>');
+                }
+                if (spell.concentration) {
+                    icons.push('<span class="spell-icon concentration-icon">Concentration</span>');
+                }
+                if (spell.reaction) {
+                    icons.push('<span class="spell-icon reaction-icon">Réaction</span>');
+                }
+                const iconsHtml = icons.length > 0 ? `<div class="spell-icons">${icons.join('')}</div>` : '';
+
+                // Learning source section for learned spells
+                const learningSource = spell.learned && spell.learning_source ? 
+                    `<div class="learning-source">
+                        <div class="learning-source-label">Appris depuis:</div>
+                        <div>${spell.learning_source}</div>
+                    </div>` : '';
+
+                return `
+                    <div class="spell-card ${learnedStatus}" data-school="${spell.school}">
+                        <div class="learned-status ${learnedStatus}">${learnedText}</div>
+                        <div class="spell-header">
+                            <h3 class="spell-name">${spell.name}</h3>
+                            <div class="spell-level level-${spell.level}">${levelText}</div>
+                        </div>
+                        
+                        <div class="spell-school">${spell.school}</div>
+                        
+                        ${iconsHtml}
+                        
+                        <div class="spell-classes">${classes}</div>
+                        
+                        <div class="spell-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Temps d'incantation</div>
+                                <div class="detail-value">${spell.casting_time}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Portée</div>
+                                <div class="detail-value">${spell.range}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Composantes</div>
+                                <div class="detail-value">${components}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Durée</div>
+                                <div class="detail-value">${spell.duration}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="spell-description">${spell.description}</div>
+                        
+                        ${higherLevels}
+                        
+                        ${learningSource}
+                        
+                        <div class="spell-origin">${spell.origin}</div>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize the app when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new SpellbookApp();
+        });
+    </script>
+</body>
+</html>
