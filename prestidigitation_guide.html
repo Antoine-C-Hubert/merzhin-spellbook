@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prestidigitation : Guide pratique des tours de passe-passe magiques</title>
+  <!-- Include Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            magic: {
+              light: '#fbbf24',
+              DEFAULT: '#f59e0b',
+              dark: '#d97706'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-900 text-gray-300 min-h-screen font-serif">
+  <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <header class="mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-magic-light">Prestidigitation : Guide pratique des tours de passe-passe magiques</h1>
+      <div class="w-24 h-1 bg-magic mx-auto mb-6"></div>
+    </header>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-4 text-magic-light">Introduction</h2>
+      <div class="space-y-4 text-lg">
+        <p>
+          La Prestidigitation est un sort ancestral, vestige de plusieurs éditions et fidèle compagnon des magiciens depuis des décennies. 
+          Ses capacités précises ont beau changer à chaque édition, elle reste une source inépuisable de malice magique mineure.
+        </p>
+        <p>
+          En 5e édition, Wizards of the Coast a introduit des sorts similaires (<strong class="text-magic-light">Druidisme</strong> et <strong class="text-magic-light">Thaumaturgie</strong>) 
+          qui remplissent des fonctions comparables mais sont taillés sur mesure pour leurs classes respectives. Chaque lanceur de sorts complet 
+          dispose désormais de son propre arsenal d'utilité magique.
+        </p>
+        <p>
+          Dans cet article, nous explorerons la Prestidigitation et ses cousins, examinant ce qu'ils peuvent ou ne peuvent pas faire, 
+          et pesant les mérites de chaque sort face aux autres. (Spoiler : Prestidigitation gagne, mais laissons les autres croire qu'ils ont leurs chances.)
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-12 bg-gray-800 p-6 rounded-lg">
+      <h2 class="text-2xl font-bold mb-4 text-magic-light">Table des matières</h2>
+      <ul class="space-y-2 text-lg">
+        <li class="hover:text-magic transition-colors">
+          <a href="#introduction">Introduction</a>
+        </li>
+        <li class="hover:text-magic transition-colors">
+          <a href="#disclaimer">Avertissement</a>
+        </li>
+        <li class="hover:text-magic transition-colors">
+          <a href="#druidcraft">Druidisme</a>
+          <ul class="ml-6 mt-2 space-y-1">
+            <li class="hover:text-magic transition-colors">• <a href="#druidcraft-etymology">Étymologie</a></li>
+            <li class="hover:text-magic transition-colors">• <a href="#druidcraft-function">Fonction</a></li>
+          </ul>
+        </li>
+        <li class="hover:text-magic transition-colors">
+          <a href="#prestidigitation">Prestidigitation</a>
+          <ul class="ml-6 mt-2 space-y-1">
+            <li class="hover:text-magic transition-colors">• <a href="#prestidigitation-etymology">Étymologie</a></li>
+            <li class="hover:text-magic transition-colors">• <a href="#prestidigitation-function">Fonction</a></li>
+          </ul>
+        </li>
+        <li class="hover:text-magic transition-colors">
+          <a href="#thaumaturgy">Thaumaturgie</a>
+          <ul class="ml-6 mt-2 space-y-1">
+            <li class="hover:text-magic transition-colors">• <a href="#thaumaturgy-etymology">Étymologie</a></li>
+            <li class="hover:text-magic transition-colors">• <a href="#thaumaturgy-function">Fonction</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="disclaimer" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-magic-light border-b border-gray-700 pb-2">Avertissement</h2>
+      <div class="space-y-4 text-lg">
+        <p>
+          Ce guide utilise le système de codage couleur devenu standard parmi les manuels de construction Pathfinder, 
+          simple à comprendre et lisible d'un coup d'œil.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+          <div class="bg-red-900 p-4 rounded-lg">
+            <strong class="text-red-300">Rouge :</strong> Options mauvaises, inutiles, ou extrêmement situationnelles. Presque jamais utiles.
+          </div>
+          <div class="bg-orange-900 p-4 rounded-lg">
+            <strong class="text-orange-300">Orange :</strong> Options correctes, ou utiles uniquement dans de rares circonstances. Parfois utiles.
+          </div>
+          <div class="bg-green-900 p-4 rounded-lg">
+            <strong class="text-green-300">Vert :</strong> Bonnes options. Souvent utiles.
+          </div>
+          <div class="bg-blue-900 p-4 rounded-lg">
+            <strong class="text-blue-300">Bleu :</strong> Options fantastiques, souvent essentielles au fonctionnement de votre personnage. Très fréquemment utiles.
+          </div>
+        </div>
+        <p class="text-sm italic mt-4">
+          Les conseils offerts ci-dessous sont basés sur l'état actuel du méta d'optimisation de personnage D&D 5e 2014 
+          au moment de la dernière mise à jour de l'article. Gardez à l'esprit que l'état du méta change périodiquement 
+          avec la sortie de nouveaux matériaux source.
+        </p>
+      </div>
+    </section>
+
+    <section id="druidcraft" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-magic-light border-b border-gray-700 pb-2">Druidisme</h2>
+      <div class="space-y-4 text-lg">
+        <div class="bg-red-900 p-4 rounded-lg border-l-4 border-red-500">
+          <p>
+            Principalement exclusif aux druides, et nous devrions tous être très heureux de ce fait car le Druidisme est... 
+            comment dire... décevant. Il fait moins que Prestidigitation et Thaumaturgie, et les choses uniques qu'il fait 
+            sont vraiment peu attrayantes. Honnêtement, je ne trouve pas une seule raison de prendre ce sort plutôt que 
+            littéralement n'importe quel autre tour du jeu.
+          </p>
+        </div>
+
+        <div id="druidcraft-etymology" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-magic">Étymologie</h3>
+          <p>
+            Même l'étymologie du mot "Druidcraft" est décevante. Il a deux racines : druide et craft. 
+            "Craft" signifie une occupation ou une compétence, et "Druide" fait référence à la classe Druide. 
+            C'est littéralement "une compétence qu'un druide possède". Pas très inspirant.
+          </p>
+        </div>
+
+        <div id="druidcraft-function" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-magic">Fonction</h3>
+          <p class="mb-4">
+            Contrairement à Prestidigitation, tous les effets du Druidisme sont instantanés. Le Druidisme a 4 fonctions listées :
+          </p>
+          
+          <div class="space-y-4">
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold">Prédiction météorologique :</p>
+              <p>
+                Vous créez un petit effet sensoriel inoffensif qui prédit le temps qu'il fera dans votre région pendant les 24 prochaines heures. 
+                Dans la plupart des cas, vous pouvez aussi dire le temps en regardant le ciel. (Un test d'Intelligence pourrait probablement 
+                remplacer cette fonction.)
+              </p>
+            </div>
+            
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold">Épanouissement floral :</p>
+              <p>
+                Vous faites instantanément éclore une fleur, ouvrir une gousse de graines, ou bourgeonner un bourgeon de feuille. 
+                C'est un joli tour, mais je ne trouve pas de moyens vraiment intéressants de l'utiliser. Peut-être ouvrir des fleurs 
+                pour flirter ? Ou ouvrir une gousse pour en manger le contenu ? C'est tout ce que j'ai.
+              </p>
+            </div>
+            
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold">Effet sensoriel :</p>
+              <p>
+                Vous créez un effet sensoriel instantané et inoffensif, comme des feuilles qui tombent, une bouffée de vent, 
+                le son d'un petit animal, ou la faible odeur d'une mouffette. Cela imite l'option "effet sensoriel inoffensif" de Prestidigitation.
+              </p>
+            </div>
+            
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold">Allumage/extinction :</p>
+              <p>
+                Vous allumez ou éteignez instantanément une bougie, une torche, ou un petit feu de camp. 
+                Cela imite la même fonction de Prestidigitation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="prestidigitation" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-magic-light border-b border-gray-700 pb-2">Prestidigitation</h2>
+      <div class="space-y-4 text-lg">
+        <div class="bg-blue-900 p-4 rounded-lg border-l-4 border-blue-500">
+          <p>
+            Prestidigitation est vraiment sans égal. Aucun tour n'est si polyvalent, si flexible, si utile que Prestidigitation. 
+            Il y a des imitateurs (spécifiquement Druidisme et Thaumaturgie), mais il n'y a pas de concurrents. Avec 6 fonctions 
+            spécifiques, chacune distincte, utile et intéressante à sa manière, Prestidigitation est un pilier de l'arsenal 
+            de tout lanceur de sorts arcaniques.
+          </p>
+        </div>
+
+        <div id="prestidigitation-etymology" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-magic">Étymologie</h3>
+          <p>
+            Les racines du mot Prestidigitation sont d'origine française, de "Preste", signifiant "agile" ou "rapide", 
+            et de "Digitus", signifiant "doigts". Le suffixe -ation est un "suffixe de processus", ce qui signifie que 
+            l'appliquer à un mot fait de ce mot un acte ou un processus. Donc Prestidigitation signifie grossièrement 
+            "l'acte de doigts rapides". (Autrement dit, exactement ce que fait un magicien digne de ce nom.)
+          </p>
+        </div>
+
+        <div id="prestidigitation-function" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-magic">Fonction</h3>
+          <p class="mb-4">
+            Prestidigitation liste 6 fonctions spécifiques. Vous pouvez avoir 3 effets non-instantanés actifs en même temps, 
+            et les effets durables durent jusqu'à une heure. Le sort omet notamment un mécanisme pour dissiper directement 
+            les effets durables, mais vous pouvez les retirer en créant de nouveaux effets durables, ce qui retire d'abord 
+            l'effet durable le plus ancien.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold text-magic-light">Effet sensoriel instantané :</p>
+              <p>
+                Vous créez un effet sensoriel instantané et inoffensif, comme une pluie d'étincelles, une bouffée de vent, 
+                de faibles notes musicales, ou une odeur étrange. C'est votre option de bêtises magiques générales. 
+                Similaire à Illusion mineure, mais sans l'option de créer un effet illusoire persistant. Si vous avez besoin 
+                d'une distraction ou d'attirer l'attention de quelqu'un, c'est comme ça que vous le faites.
+              </p>
+            </div>
+            
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold text-magic-light">Allumage/extinction :</p>
+              <p>
+                Vous allumez ou éteignez instantanément une bougie, une torche, ou un petit feu de camp. 
+                Pratique, mais typiquement vous pouvez faire cela avec un briquet et de l'acier, qui sont des éléments 
+                de base de l'équipement d'aventurier.
+              </p>
+            </div>
+            
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold text-magic-light">Nettoyage/salissure :</p>
+              <p>
+                Vous nettoyez ou salissez instantanément un objet d'au plus 30 cm³. La capacité de nettoyage semble 
+                seulement limitée par le volume, donc vous pouvez nettoyer toutes sortes de saletés et de gore des objets, 
+                pourvu qu'ils rentrent dans les paramètres de taille. Malheureusement, selon les règles strictes, 
+                vous ne pouvez pas utiliser cet effet pour vous nettoyer vous-même car vous n'êtes pas un objet. 
+                Vous devrez vous laver comme une personne normale. (Dommage.)
+              </p>
+            </div>
+            
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold text-magic-light">Refroidissement/réchauffement/aromatisation :</p>
+              <p>
+                Vous refroidissez, réchauffez, ou aromatisez jusqu'à 30 cm³ de matériau non-vivant pendant 1 heure. 
+                La capacité de changer la température et la saveur de la nourriture serait un talent profondément utile 
+                dans la vraie vie. Imaginez avoir toujours des boissons fraîches et des repas chauds. Imaginez ne jamais 
+                vous soucier d'aliments que vous n'aimez pas car vous pouvez simplement changer leur saveur. 
+                Malheureusement, vous ne pouvez rien faire pour la texture, donc vous devrez encore user d'imagination 
+                quand vous mangez votre porridge au goût chocolat.
+              </p>
+            </div>
+            
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold text-magic-light">Marque colorée :</p>
+              <p>
+                Vous faites apparaître une couleur, une petite marque, ou un symbole sur un objet ou une surface pendant 1 heure. 
+                Contrairement aux autres options de Prestidigitation, cette option ne spécifie pas de limitation de taille. 
+                Le plus proche que nous obtenons est "petit", mais en termes de jeu, c'est encore aussi grand qu'un halfelin. 
+                En tant que MJ, je suggère : l'effet peut faire jusqu'à 30 cm². Il est principalement opaque, mais vous pouvez 
+                encore clairement distinguer les détails de ce que l'effet couvre.
+              </p>
+            </div>
+            
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold text-magic-light">Babiole ou image illusoire :</p>
+              <p>
+                Vous créez une babiole non-magique ou une image illusoire qui peut tenir dans votre main et qui dure 
+                jusqu'à la fin de votre prochain tour. C'est l'équivalent de sortir une fleur en papier de votre manche. 
+                C'est formidable si vous voulez attirer l'attention de quelqu'un (faire briller un bijou ou une gemme) 
+                ou si vous voulez montrer à quelqu'un l'image de quelque chose, comme un objet manquant ou le visage d'une personne.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="thaumaturgy" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-magic-light border-b border-gray-700 pb-2">Thaumaturgie</h2>
+      <div class="space-y-4 text-lg">
+        <div class="bg-orange-900 p-4 rounded-lg border-l-4 border-orange-500">
+          <p>
+            L'équivalent du clerc de Prestidigitation, Thaumaturgie a une atmosphère très divine. Tout ce que vous pouvez 
+            faire avec donne l'impression d'être significatif et menaçant comme la colère d'un dieu en colère. Mais en termes 
+            strictement mécaniques, Thaumaturgie n'est tout simplement pas aussi bien que Prestidigitation. Il fait moins de choses, 
+            et les choses qu'il fait sont moins diverses et utiles.
+          </p>
+          <p class="mt-3">
+            Un avantage intéressant : Thaumaturgie n'a que des composantes verbales. Bien que cela ne viendra probablement pas souvent, 
+            il est intéressant que vous puissiez l'utiliser en étant entravé ou en gardant vos mains sur les côtés.
+          </p>
+        </div>
+
+        <div id="thaumaturgy-etymology" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-magic">Étymologie</h3>
+          <p>
+            Thaumaturgie est d'origine grecque, et a deux racines : Thauma, signifiant "miracle" ou "merveille", 
+            et Ergon, signifiant "travailler". Cela signifie littéralement "Opérer des miracles", ce qui est peut-être 
+            la chose la plus cléricale que j'aie jamais lue.
+          </p>
+        </div>
+
+        <div id="thaumaturgy-function" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-magic">Fonction</h3>
+          <p class="mb-4">
+            Les effets de Thaumaturgie sont tous assez similaires, se concentrant sur des choses qu'un clerc pourrait 
+            faire quand son dieu est en colère contre quelqu'un : crier d'une voix anormalement forte, faire trembler la terre, 
+            tonnerre lointain, etc.
+          </p>
+          
+          <div class="space-y-4">
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold">Voix tonnante :</p>
+              <p>
+                Votre voix résonne jusqu'à trois fois plus fort que la normale pendant 1 minute. 
+                Merveilleux pour donner des discours, et un MJ extrêmement généreux pourrait vous laisser l'utiliser 
+                pour des tests d'Intimidation d'une manière ou d'une autre.
+              </p>
+            </div>
+            
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold">Manipulation des flammes :</p>
+              <p>
+                Vous causez aux flammes de vaciller, de s'éclaircir, de s'assombrir, ou de changer de couleur pendant 1 minute. 
+                Il n'est pas clair si cela a un effet sur le niveau de lumière fourni par les flammes, mais vous pouvez faire 
+                des choses cool comme avoir des torches violettes. Vous voulez des torches violettes, n'est-ce pas ?
+              </p>
+            </div>
+            
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold">Tremblements inoffensifs :</p>
+              <p>
+                Vous causez des tremblements inoffensifs dans le sol pendant 1 minute. Les tremblements ne s'appliquent que dans la portée, 
+                donc la portée de 9m sur Thaumaturgie limite vos options. Mais vous pouvez produire cet effet puis quitter la zone, 
+                laissant toutes les créatures dans la zone profiter de quelques tremblements troublants mais par ailleurs banals.
+              </p>
+            </div>
+            
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold">Son instantané :</p>
+              <p>
+                Vous créez un son instantané qui provient d'un point de votre choix dans la portée, comme un grondement de tonnerre, 
+                le cri d'un corbeau, ou des chuchotements inquiétants. C'est similaire à l'effet sensoriel inoffensif de Prestidigitation, 
+                mais vous êtes limité aux effets auditifs.
+              </p>
+            </div>
+            
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold">Ouverture/fermeture dramatique :</p>
+              <p>
+                Vous causez instantanément qu'une porte ou fenêtre déverrouillée s'ouvre brusquement ou se referme avec fracas. 
+                Le mot "brusquement" ici signifie que la porte/fenêtre s'ouvre ou se ferme rapidement et dramatiquement. 
+                Donc non, fermer doucement une porte que vous avez oublié de fermer est hors de question.
+              </p>
+            </div>
+            
+            <div class="border-l-4 border-magic pl-4">
+              <p class="font-semibold">Altération des yeux :</p>
+              <p>
+                Vous altérez l'apparence de vos yeux pendant 1 minute. "Altérer" n'est pas strictement défini, 
+                donc il n'est pas clair quelles sont les limitations. Vous voulez des yeux d'insecte ? Autorisé. 
+                Un œil de cyclope ? Oui. De gros yeux d'anime ? Absolument. Pas d'yeux ? Techniquement autorisé, je pense.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-16 pt-8 border-t border-gray-700 text-gray-400 text-center">
+      <p class="italic">
+        Ce sort enterre ses équivalents élémentaires, et c'est bien mérité. Ne fonctionne pas sur les tartes explosives. 
+        Ne me demandez pas pourquoi.
+      </p>
+      <div class="mt-4 text-magic-light">
+        <span class="inline-block transform hover:rotate-12 transition-transform cursor-pointer">✨</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
