@@ -1,0 +1,56 @@
+**IMAGE GENERATION GUIDELINES — MERZHIN WIZARD UNIVERSE STYLE**
+
+---
+
+**1. DRAWING STYLE**
+
+* **Medium**: Digital illustration with painterly rendering. Mix of traditional feel and digital texture.
+* **Lineart**: Fine, clean ink-style lines; contour lines used selectively. Where fitting, include soft outlines with sketch-like warmth.
+* **Brushwork**: Soft round brushes for shading; textured brushwork for fabric and magical artifacts. Detailed, classical-style rendering for key elements (faces, magical items).
+* **Detail**: High-resolution texture emphasis—creases in robes, visible threads, magical auras subtly inscribed with runes.
+* **Humor**: Embed visual whimsy or irony—odd labels, misplaced magical effects, and slightly exaggerated expressions.
+
+---
+
+**2. COLOR PALETTE AND SHADING**
+
+* **General Palette**: Muted, desaturated tones with earthy hues; occasional rich highlights.
+* **Robes**: Dusty blues, olive greens, greys, browns, and faded reds. Well-worn, layered look with fabric wear.
+* **Skin**: Realistic tones with painterly shading and expressive detail—wrinkles, smile lines, and mystical glow.
+* **Backgrounds**: Dark, painterly textures with smoky or magical haze.
+* **Accent Colors**: Magical effects and runes glow subtly—gold, blue, purple sparkles.
+* **Lighting**: Strong but natural light sources; dramatic edge lighting when highlighting magic.
+
+---
+
+**3. CHARACTER DESIGN (FOCUS ON WIZARDS)**
+
+* **Anatomy**: Stylized realism; slightly elongated with expressive posture, slightly caricatural characters that emphasize tone and personality.
+* **Pose**: Static or mildly dynamic; usually frontal or 3/4 view with narrative subtext (e.g., reacting to unseen chaos).
+* **Clothing**: Layered robes, oversized or too-long hems, and embroidered symbols.
+* **Hat**: Drooping pointed hats, often bent or ornamented (stars, astrological signs, tea stains).
+* **Accessories**: Old, overused magical items—staffs, scrolls, glowing trinkets, familiars with attitude.
+* **Facial Features**: Realistic with painterly depth—expressive eyes, beards with character, wind-tousled hair.
+* **Expression**: Quirky, alert, occasionally bemused. Suggest internal monologue or dry commentary.
+
+---
+
+**4. COMPOSITION AND FRAMING**
+
+* **Framing**: Mid-to-full body, centered composition with suggestive asymmetry (e.g., spell effect glowing on one side).
+* **Backgrounds**: Abstract or vignette-style backdrops, occasionally mimicking book covers or parodying famous artworks.
+* **Effects**: Magical glow, floating glyphs, light distortions. Hints of unseen forces at play.
+* **Easter Eggs**: Include visual in-jokes or elements that reward close viewing (e.g., animated socks, lurking Death, suspiciously sentient spellbook).
+
+---
+
+**5. TECHNICAL SPECIFICATIONS**
+
+* **Resolution**: Portrait orientation; minimum 384x512 px.
+* **File Type**: RGB JPEG preferred.
+* **Style**: Maintain painterly texture and muted tone throughout. High detail with narrative embedded in visuals.
+* **Humor Elements**: Subtle parody, caricature touches, whimsical contradictions consistent with the Discworld tone.
+
+---
+
+These guidelines are designed to blend the visual language of the Merzhin universe with illustrations—rich style, detailed, and always with a twinkle of magic (and mischief).
