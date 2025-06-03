@@ -17,11 +17,12 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": true,
         "learning_source": "Unseen University",
-        "comment": "Déplacer des objets à distance : tirez des leviers douteux, ouvrez des portes suspectes, triez votre linge enchanté (attention aux chaussettes dimensionnelles), et évitez de risquer vos phalanges. Ne fonctionne pas sur les tartes explosives. Ne me demandez pas pourquoi."
+        "comment": "Déplacer des objets à distance : tirez des leviers douteux, ouvrez des portes suspectes, triez votre linge enchanté (attention aux chaussettes dimensionnelles), et évitez de risquer vos phalanges. Ne fonctionne pas sur les tartes explosives. Ne me demandez pas pourquoi.",
+        "score": 4
     },
     {
         "name": "Trait de feu",
-        "name_en": "",
+        "name_en": "Fire Bolt",
         "level": 0,
         "school": "Évocation",
         "class": ["Ensorceleur", "Magicien"],
@@ -37,11 +38,12 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 3
     },
     {
         "name": "Piqûre mentale",
-        "name_en": "",
+        "name_en": "Mind Sliver",
         "level": 0,
         "school": "Enchantement",
         "class": ["Ensorceleur", "Occultiste", "Magicien"],
@@ -57,11 +59,12 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     },
     {
         "name": "Illusion Mineure",
-        "name_en": "",
+        "name_en": "Minor Illusion",
         "level": 0,
         "school": "Illusion",
         "class": ["Barde", "Ensorceleur", "Occultiste", "Magicien"],
@@ -76,11 +79,12 @@
         "origin": "Player's Handbook (SRD)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     },
     {
         "name": "Prestidigitation",
-        "name_en": "",
+        "name_en": "Prestidigitation",
         "level": 0,
         "school": "Transmutation",
         "class": ["Barde", "Sorcier", "Magicien", "Ensorceleur"],
@@ -95,7 +99,8 @@
         "origin": "Player's Handbook (SRD)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     },
     {
         "name": "Façonnage de l'eau",
@@ -114,11 +119,12 @@
         "origin": "Xanathar's Guide to Everything (XGE)",
         "learned": true,
         "learning_source": "Librarian of Unseen University",
-        "comment": "Aussi exploitable que Prestidigitation : geler un cube d'eau et l'écraser sur quelqu'un, briser une serrure en la gelant, ériger un dôme de glace, bloquer un couloir, construire un pont par segments de 1,50 m… Si vous avez un tonneau d'eau et ce tour, vous avez une réponse à tout. Ce sort enterre ses équivalents élémentaires, et c'est bien mérité. Voir mon <a href=\"https://rpgbot.net/dnd5/characters/shape-water\" target=\"_blank\">Guide Pratique du Modelage de l'Eau</a> pour plus d'idées brillamment discutables."
+        "comment": "Aussi exploitable que Prestidigitation : geler un cube d'eau et l'écraser sur quelqu'un, briser une serrure en la gelant, ériger un dôme de glace, bloquer un couloir, construire un pont par segments de 1,50 m… Si vous avez un tonneau d'eau et ce tour, vous avez une réponse à tout. Ce sort enterre ses équivalents élémentaires, et c'est bien mérité. Voir mon <a href=\"https://rpgbot.net/dnd5/characters/shape-water\" target=\"_blank\">Guide Pratique du Modelage de l'Eau</a> pour plus d'idées brillamment discutables.",
+        "score": 4
     },
     {
         "name": "Éruption de lames",
-        "name_en": "",
+        "name_en": "Sword Burst",
         "level": 0,
         "school": "Invocation",
         "class": ["Ensorceleur", "Magicien", "Occultiste"],
@@ -134,11 +140,12 @@
         "origin": "Tasha's Cauldron of Everything",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 2
     },
     {
         "name": "Coup au but",
-        "name_en": "",
+        "name_en": "True Strike",
         "level": 0,
         "school": "Évocation",
         "class": ["Barde", "Ensorceleur", "Magicien", "Occultiste"],
@@ -154,11 +161,12 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 1
     },
     {
         "name": "Absorption des éléments",
-        "name_en": "",
+        "name_en": "Absorb Elements",
         "level": 1,
         "school": "Abjuration",
         "class": ["Druide", "Ensorceleur", "Magicien", "Rôdeur"],
@@ -174,11 +182,12 @@
         "origin": "Xanathar's Guide to Everything",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     },
     {
         "name": "Alarme",
-        "name_en": "",
+        "name_en": "Alarm",
         "level": 1,
         "school": "Abjuration",
         "class": ["Rôdeur", "Magicien"],
@@ -194,11 +203,12 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     },
     {
         "name": "Compréhension des langues",
-        "name_en": "",
+        "name_en": "Comprehend Languages",
         "level": 1,
         "school": "Divination",
         "class": ["Barde", "Ensorceleur", "Occultiste", "Magicien"],
@@ -214,11 +224,12 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     },
     {
         "name": "Simulacre de vie",
-        "name_en": "",
+        "name_en": "False Life",
         "level": 1,
         "school": "Nécromancie",
         "class": ["Ensorceleur", "Magicien"],
@@ -234,11 +245,12 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     },
     {
         "name": "Feuille morte",
-        "name_en": "",
+        "name_en": "Feather Fall",
         "level": 1,
         "school": "Transmutation",
         "class": ["Barde", "Ensorceleur", "Magicien"],
@@ -254,11 +266,12 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     },
     {
         "name": "Appel de familier",
-        "name_en": "",
+        "name_en": "Find Familiar",
         "level": 1,
         "school": "Invocation",
         "class": ["Magicien"],
@@ -274,11 +287,12 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     },
     {
         "name": "Armure de mage",
-        "name_en": "",
+        "name_en": "Mage Armor",
         "level": 1,
         "school": "Abjuration",
         "class": ["Ensorceleur", "Magicien"],
@@ -294,11 +308,12 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 3
     },
     {
         "name": "Projectile magique",
-        "name_en": "",
+        "name_en": "Magic Missile",
         "level": 1,
         "school": "Évocation",
         "class": ["Ensorceleur", "Magicien"],
@@ -314,11 +329,12 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     },
     {
         "name": "Bouclier",
-        "name_en": "",
+        "name_en": "Shield",
         "level": 1,
         "school": "Abjuration",
         "class": ["Ensorceleur", "Magicien"],
@@ -334,11 +350,12 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     },
     {
         "name": "Image silencieuse",
-        "name_en": "",
+        "name_en": "Silent Image",
         "level": 1,
         "school": "Illusion",
         "class": ["Barde", "Ensorceleur", "Magicien"],
@@ -354,11 +371,12 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     },
     {
         "name": "Barbes argentées",
-        "name_en": "",
+        "name_en": "Silvery Barbs",
         "level": 1,
         "school": "Enchantement",
         "class": ["Barde", "Ensorceleur", "Magicien"],
@@ -374,11 +392,12 @@
         "origin": "Strixhaven: A Curriculum of Chaos",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     },
     {
         "name": "Sommeil",
-        "name_en": "",
+        "name_en": "Sleep",
         "level": 1,
         "school": "Enchantement",
         "class": ["Barde", "Ensorceleur", "Magicien"],
@@ -394,7 +413,8 @@
         "origin": "Player's Handbook 2024 (BR)",
         "learned": false,
         "learning_source": "",
-        "comment": ""
+        "comment": "",
+        "score": 4
     }
 ]
 
