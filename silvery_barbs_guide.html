@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Barbes argentées : Guide de survie contre la destruction de l'équilibre</title>
+  <!-- Include Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            silver: {
+              light: '#e5e7eb',
+              DEFAULT: '#9ca3af',
+              dark: '#6b7280'
+            },
+            warning: {
+              light: '#fef3c7',
+              DEFAULT: '#f59e0b',
+              dark: '#d97706'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-900 text-gray-300 min-h-screen font-serif">
+  <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <header class="mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-silver-light"> Barbes argentées : Guide de survie contre la destruction de l'équilibre</h1>
+      <div class="w-24 h-1 bg-silver mx-auto mb-6"></div>
+      <div class="bg-red-900 p-4 rounded-lg border-l-4 border-red-500 max-w-2xl mx-auto">
+        <p class="text-red-300 font-semibold">
+          ⚠️ Avertissement : Ce sort peut causer des effondrement de campagnes, des crise existentielles chez les MJ, 
+          et une addiction chronique aux relances de dés.
+        </p>
+      </div>
+    </header>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-4 text-silver-light">Introduction</h2>
+      <div class="space-y-4 text-lg">
+        <p>
+          <strong class="text-silver-light">Strixhaven: A Curriculum of Chaos</strong> nous a donné seulement 5 nouveaux sorts, 
+          et pour la plupart ils n'étaient pas un énorme problème. Cependant, Barbes argentées a justement causé tout un émoi 
+          en raison de sa puissance incroyablement dévastatrice. Il permet un certain nombre de cas d'abus problématiques, 
+          et même si vous n'en avez repéré qu'un seul, vous comprenez probablement pourquoi ce sort pose problème.
+        </p>
+        <p>
+          Alors empirons toute la situation en trouvant chaque cas d'abus intégré dans le sort.
+        </p>
+        <p class="text-sm italic text-silver">
+          (Ne vous inquiétez pas, je suggérerai aussi des corrections. Probablement.)
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-12 bg-gray-800 p-6 rounded-lg">
+      <h2 class="text-2xl font-bold mb-4 text-silver-light">Table des matières</h2>
+      <ul class="space-y-2 text-lg">
+        <li class="hover:text-silver transition-colors">
+          <a href="#rules">Les règles</a>
+        </li>
+        <li class="hover:text-silver transition-colors">
+          <a href="#errata">Errata / Réponses officielles</a>
+        </li>
+        <li class="hover:text-silver transition-colors">
+          <a href="#uses-abuses">Utilisations et abus</a>
+          <ul class="ml-6 mt-2 space-y-1">
+            <li class="hover:text-silver transition-colors">• <a href="#critical-hits">Nier les coups critiques</a></li>
+            <li class="hover:text-silver transition-colors">• <a href="#advantage">Nier les avantages</a></li>
+            <li class="hover:text-silver transition-colors">• <a href="#save-or-suck">Sauve ou souffre</a></li>
+            <li class="hover:text-silver transition-colors">• <a href="#spam">Spam sur le même jet</a></li>
+            <li class="hover:text-silver transition-colors">• <a href="#counterspell">Contrer Contresort</a></li>
+            <li class="hover:text-silver transition-colors">• <a href="#skills">Renforcement des compétences</a></li>
+          </ul>
+        </li>
+        <li class="hover:text-silver transition-colors">
+          <a href="#limitations">Limitations existantes</a>
+        </li>
+        <li class="hover:text-silver transition-colors">
+          <a href="#fixes">Corrections suggérées</a>
+        </li>
+        <li class="hover:text-silver transition-colors">
+          <a href="#conclusion">Conclusion</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="rules" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-silver-light border-b border-gray-700 pb-2">Les règles</h2>
+      <div class="space-y-4 text-lg">
+        <p>
+          Je ne peux pas reproduire le texte complet du sort car il ne fait pas partie du SRD, 
+          donc jetez un œil à DnDBeyond ou procurez-vous le livre.
+        </p>
+        <p>
+          Pour résumer grossièrement les effets :
+        </p>
+        <div class="bg-gray-800 p-6 rounded-lg mt-4">
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-silver-light font-semibold mr-2">•</span>
+              Sort d'enchantement de niveau 1 disponible pour les Bardes, Ensorceleurs et Magiciens
+            </li>
+            <li class="flex items-start">
+              <span class="text-silver-light font-semibold mr-2">•</span>
+              Portée de 18m, composante verbale, lancé en Réaction quand une cible réussit une attaque/test/sauvegarde
+            </li>
+            <li class="flex items-start">
+              <span class="text-silver-light font-semibold mr-2">•</span>
+              La cible déclencheuse lance un nouveau d20 et prend le plus bas entre son jet réussi et le nouveau jet
+            </li>
+            <li class="flex items-start">
+              <span class="text-silver-light font-semibold mr-2">•</span>
+              Une cible secondaire (qui peut être le lanceur) obtient un Avantage sur son prochain test dans la minute suivante
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="errata" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-silver-light border-b border-gray-700 pb-2">Errata / Réponses officielles</h2>
+      <div class="space-y-4 text-lg">
+        <p>
+          Wizards of the Coast a remarqué la discussion et a répondu seulement 7 jours après la sortie de Strixhaven, 
+          ce qui est d'une rapidité fulgurante selon les standards habituels de publication d'errata de la 5e. 
+          L'errata version 3.0 est venu avec quelques réponses aux règles comme d'habitude, y compris pour  Barbes argentées.
+        </p>
+        <div class="bg-warning-dark bg-opacity-20 p-4 rounded-lg border-l-4 border-warning">
+          <p class="font-semibold text-warning-light">Question officielle :</p>
+          <p>
+            Le sort  Barbes argentées dans Strixhaven peut-il affecter la Résistance légendaire ? 
+            <strong>Non.</strong> Quand une créature utilise la Résistance légendaire, elle transforme un jet de sauvegarde raté en succès, 
+            peu importe le nombre obtenu sur le d20. Forcer cette créature à relancer le d20 par la suite ne change pas le fait 
+            que la sauvegarde a réussi grâce à la Résistance légendaire.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="uses-abuses" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-silver-light border-b border-gray-700 pb-2">Utilisations et abus</h2>
+      <div class="space-y-4 text-lg mb-6">
+        <p>
+           Barbes argentées peut être utilisé dans une grande variété de situations sur toute la gamme de niveaux. 
+          Tant que quelqu'un dans le groupe a le sort disponible, votre équipe a un atout massivement puissant.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        <div id="critical-hits" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-silver">Nier les coups critiques</h3>
+          <p>
+            La créature déclencheuse lance un 20 naturel sur un jet d'attaque. En réponse, vous prononcez la composante verbale 
+            "et si on disait non ?" et la créature relance son attaque. Elle a encore 1 chance sur 20 de réussir un coup critique, 
+            mais les probabilités sont minces. Cela rend tout votre groupe presque immunisé aux coups critiques tant que quelqu'un 
+            peut lancer  Barbes argentées.
+          </p>
+        </div>
+
+        <div id="advantage" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-silver">Nier les bénéfices de l'Avantage</h3>
+          <p>
+            La créature déclencheuse lance une attaque/test/sauvegarde avec Avantage.  Barbes argentées s'en fiche complètement. 
+            Si elle a réussi,  Barbes argentées la force à lancer un d20 supplémentaire et à utiliser le plus bas entre son jet réussi 
+            et le d20 supplémentaire. Le second d20 lancé quand elle avait l'Avantage n'a plus d'importance. 
+             Barbes argentées s'en fiche. (C'est impoli, vraiment.)
+          </p>
+        </div>
+
+        <div id="save-or-suck" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-silver">Sauve ou souffre</h3>
+          <p>
+            Notre lanceur de sorts produit un effet "sauve ou souffre", comme lancer Immobiliser une personne. 
+            La cible réussit sa sauvegarde. Notre lanceur déclare "ah non, tu ne passes pas" et lance  Barbes argentées 
+            (rappelez-vous que la limitation sur les sorts à niveau par tour ne s'applique que si vous lancez un sort 
+            en Action bonus). La cible lance un nouveau d20 et utilise le plus bas résultat, transformant très probablement 
+            un succès en échec.
+          </p>
+          <p class="mt-3 text-warning-light italic">
+            C'est essentiellement aussi bon que Métamagie (Sort intensifié), mais vous l'utilisez de manière réactive 
+            donc vous ne payez le coût que si vous en avez besoin. Ce cas seul est déjà trop bon pour un sort de niveau 1.
+          </p>
+        </div>
+
+        <div id="spam" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-silver">Spam sur le même jet</h3>
+          <p>
+            Votre groupe est composé entièrement de bardes (ou au moins de classes qui peuvent lancer  Barbes argentées). 
+            Le Barde A lance un sort "sauve ou souffre". La cible réussit la sauvegarde, donc le Barde A lance  Barbes argentées. 
+            Tragiquement, la cible réussit encore ! Mais attendez, le Barde B lance aussi  Barbes argentées ! Relancez encore !
+          </p>
+          <p class="mt-3 text-red-300 italic">
+            Cette absurdité peut continuer jusqu'à ce que la cible échoue ou que vous manquiez de gens pouvant lancer 
+             Barbes argentées. (Oui, c'est aussi ridicule que ça en a l'air.)
+          </p>
+        </div>
+
+        <div id="counterspell" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-silver">Contrer Contresort</h3>
+          <p>
+            Vous lancez un sort. Le lanceur de sorts ennemi lance Contresort, mais n'utilise pas un emplacement de sort 
+            d'assez haut niveau pour automatiquement contrer votre sort, donc il doit faire un test de caractéristique. 
+            Il réussit son test, contrant avec succès votre sort.
+          </p>
+          <p class="mt-3">
+            Mais attendez, vous avez  Barbes argentées ! Normalement vous pourriez Contresort le Contresort 
+            (oui c'est autorisé, et oui c'est aussi absurde que ça en a l'air), mais  Barbes argentées coûte 
+            deux niveaux de sort de moins que Contresort, donc c'est une solution moins chère au même problème.
+          </p>
+        </div>
+
+        <div id="skills" class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3 text-silver">Renforcement des compétences</h3>
+          <p>
+            Si vous n'avez pas le temps, les ressources, ou la Concentration à épargner pour Améliorer les capacités, 
+             Barbes argentées peut vous donner ou donner à un allié un Avantage sur un jet. Il ne nécessite pas non plus 
+            de Concentration, donc vous pouvez facilement le cumuler avec Assistance si c'est une option.
+          </p>
+          <p class="mt-3">
+            Déclencher  Barbes argentées nécessite simplement qu'une créature que vous pouvez voir réussisse un jet de d20. 
+            Demandez au membre du groupe A de frapper un mur (jet d'attaque), lancez  Barbes argentées, 
+            et donnez au membre du groupe B un Avantage sur son prochain jet de d20. (Ingénieux, non ?)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="limitations" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-silver-light border-b border-gray-700 pb-2">Limitations existantes</h2>
+      <div class="space-y-4 text-lg">
+        <p>
+          Il y a quelques limitations sur  Barbes argentées. Ce n'est pas absolument imparable.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <h4 class="font-semibold text-silver-light mb-2">Emplacements de sorts</h4>
+            <p>Les joueurs finiront par manquer d'emplacements de sorts. Les ensorceleurs transformant leurs emplacements en Points de sorcellerie pour créer plus d'emplacements de niveau 1 seront problématiques, cependant.</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <h4 class="font-semibold text-silver-light mb-2">Une Réaction par tour</h4>
+            <p>Une créature ne peut lancer  Barbes argentées qu'une fois par tour en raison des limitations imposées par l'économie d'action.</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <h4 class="font-semibold text-silver-light mb-2">Portée de 18m seulement</h4>
+            <p>18 mètres couvriront la plupart des combats, mais cet archer qui déteste les lanceurs de sorts et qui se tient à 20 mètres est en sécurité.</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <h4 class="font-semibold text-silver-light mb-2">Doit voir la cible</h4>
+            <p>Être invisible est un énorme avantage en 5e où tant de choses nécessitent de pouvoir voir la cible. L'invisibilité, l'obscurité, etc. rendent toutes une créature immunisée contre  Barbes argentées.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fixes" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-silver-light border-b border-gray-700 pb-2">Corrections suggérées</h2>
+      <div class="space-y-4 text-lg">
+        <p>
+          Les effets de  Barbes argentées ne sont pas intrinsèquement problématiques. Le problème est le coût du sort. 
+          Pour ce qu'il coûte d'utiliser  Barbes argentées, ses effets sont trop puissants.
+        </p>
+        <p>
+          Je recommande d'appliquer une ou plusieurs des modifications suivantes :
+        </p>
+        
+        <div class="space-y-4 mt-6">
+          <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-green-500">
+            <h4 class="font-semibold text-green-300 mb-2">Augmenter le niveau du sort à 2 ou 3</h4>
+            <p>Augmenter le niveau du sort augmente significativement le coût de lancement et décourage les ensorceleurs de transformer tous leurs emplacements en Points de sorcellerie.</p>
+          </div>
+          
+          <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-blue-500">
+            <h4 class="font-semibold text-blue-300 mb-2">Réduire la portée à 9 mètres</h4>
+            <p>Forcer le lanceur à être plus proche des ennemis limite la fréquence d'utilisation du sort et ajoute des risques à son usage.</p>
+          </div>
+          
+          <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-yellow-500">
+            <h4 class="font-semibold text-yellow-300 mb-2">Supprimer l'effet d'Avantage secondaire</h4>
+            <p>Cela réduit les bénéfices de  Barbes argentées, ce qui pourrait mieux l'aligner avec son coût.</p>
+          </div>
+          
+          <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-purple-500">
+            <h4 class="font-semibold text-purple-300 mb-2">Relance avec Avantage/Désavantage</h4>
+            <p>La cible relance en appliquant Avantage/Désavantage si applicable. Cela empêche  Barbes argentées de totalement nier l'Avantage.</p>
+          </div>
+        </div>
+        
+        <div class="bg-warning-dark bg-opacity-20 p-4 rounded-lg border-l-4 border-warning mt-6">
+          <p class="text-warning-light">
+            <strong>Recommandation personnelle :</strong> Sort de niveau 2 sans effet secondaire qui force juste une relance. 
+            C'est encore un très bon sort que je considérerais fortement prendre, mais pas si bon qu'il définirait ma construction. 
+            (Et mes joueurs ne me regarderaient pas avec cet air de "nous possédons maintenant l'univers".)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="conclusion" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-silver-light border-b border-gray-700 pb-2">Conclusion</h2>
+      <div class="space-y-4 text-lg">
+        <div class="bg-red-900 p-6 rounded-lg border-l-4 border-red-500">
+          <p>
+             Barbes argentées est si bon que nous avons probablement atteint un état du jeu où un lanceur de sorts "sauve ou souffre" 
+            est la seule construction qui vaut la peine d'être jouée. Un groupe de bardes, d'ensorceleurs et de magiciens était déjà 
+            incroyablement puissant, mais maintenant c'est si bon que personne d'autre n'a besoin de se présenter au jeu.
+          </p>
+          <p class="mt-3">
+            Chaque rencontre devient maintenant un jeu de "sauve ou souffre" où celui qui joue en premier gagne carrément. 
+            Ce n'est pas une bonne chose.
+          </p>
+        </div>
+        
+        <div class="bg-warning-dark bg-opacity-20 p-6 rounded-lg border-l-4 border-warning">
+          <p class="text-warning-light font-semibold text-xl">
+            Donc au cas où ce ne serait pas parfaitement clair : 
+            <strong>Bannissez  Barbes argentées</strong> à moins que votre groupe ne soit prêt à l'utiliser avec certaines des corrections proposées ci-dessus.
+          </p>
+          <p class="mt-3 text-sm italic">
+            (Ou profitez du chaos. Mais ne venez pas pleurer quand vos joueurs commencent à traiter les dragons anciens 
+            comme des kobolds particulièrement têtus.)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-16 pt-8 border-t border-gray-700 text-gray-400 text-center">
+      <p class="italic">
+        Ce sort enterre ses équivalents réactifs, et c'est bien mérité. Ne fonctionne pas sur la fierté des MJ. 
+        Ne me demandez pas pourquoi.
+      </p>
+      <div class="mt-4 text-silver-light">
+        <span class="inline-block transform hover:rotate-12 transition-transform cursor-pointer">⚡</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
