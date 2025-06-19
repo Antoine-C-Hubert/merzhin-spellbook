@@ -1,0 +1,128 @@
+## 🎨 **MERZHIN — OFFICIAL VISUAL STYLE & DESIGN MANUAL**
+
+---
+
+## **1. Core Physical Attributes**
+
+**Face:**
+
+* **Age:** Young adult, late teens to early twenties — a wizard prodigy, not yet wizened.
+* **Skin:** Pale, realistic skin tone with painterly shading; faint shadows hinting at insomnia or clairvoyant strain.
+* **Eyes:** Wide open, pale irises with subtle sparkles or faint reflections of magical glyphs. They should feel glassy and slightly unfocused — seeing past, present, and future at once.
+* **Expression:** Dry half-smile bordering on sarcastic; bemused, like he’s halfway through a pun only he and fate find funny.
+* **Hair:** Medium-length, unkempt, wind-tossed. Dark brown to auburn, with a chaotic fringe that breaks the contour of his hat.
+
+---
+
+## **2. Signature Clothing**
+
+**Hat:**
+
+* Oversized, floppy, pointed wizard hat that folds or droops under its own weight.
+* Embroidered with astrological symbols and a prominent shooting star.
+* Should include visible tea stains — a quirky nod to domestic wizarding mishaps.
+* Color: Earthy red or faded crimson with aged cloth texture.
+
+**Robes:**
+
+* Layered, oversized, and too large — as if borrowed from a future self.
+* Main hue: Muted, dusty reds with hints of faded browns, olive greens, and greys in the underlayers.
+* Embroidery: Crooked, mismatched runes and astrological symbols stitched in visible threads — imperfections are key.
+* Hems and edges: Frayed and worn, with visible fabric grain in high-resolution rendering.
+
+**Undershirt / Layers:**
+
+* Subtle glimpses of olive green or greyish garments beneath the robe layers. Muted and understated.
+
+---
+
+## **3. Iconic Items & Props**
+
+**Staff:**
+
+* Long, raw-looking wooden staff. Plain and unpolished in shape.
+* Magical effect: Subtle octarine shimmer (the color of magic — a purplish sparkle) near the tip or runes faintly visible.
+* He often holds it as if listening to it or forgets to lean on it.
+
+**Spellbook:**
+
+* Scrapbook-style, chaotic tome bound in faux dragon-hide that actually resembles cracked library glue with scaly texture.
+* Pages should be sticking out, flipping mid-air, and glowing faintly with magical glyphs.
+* The book subtly shifts shape or size — hints of instability are welcome.
+* Title (optional Easter egg): *“A Modestly Predictable Guide to Improbable Incantations.”*
+* Should look alive — marginalia and footnotes might argue visually.
+
+**Crossbow:**
+
+* Small, simple short crossbow discreetly strapped to his hip, mostly hidden under his robe folds.
+
+**Satchel:**
+
+* Worn leather or cloth satchel, slightly bigger on the inside. Should hint at hidden chaos: scroll ends, loose socks, parchment corners poking out.
+* Include the famous sock labeled *“For Temporal Emergencies.”*
+
+---
+
+## **4. Posing & Body Language**
+
+* **Pose:** 3/4 view or frontal; mid-to-full body framing preferred.
+* **Stance:** Slightly off-balance — as if he just tripped through a half-foreseen mishap.
+* **Gestures:** One hand resting or listening to his staff; the other handling his spellbook, or brushing aside floating glyphs.
+* **Expression & Posture:** Mildly startled yet amused; looks caught mid-foretelling.
+
+---
+
+## **5. Magical & Environmental Effects**
+
+**Magic Aura:**
+
+* Floating octarine glyphs spiral near his staff, spellbook, or around his head in divinatory patterns.
+* Subtle magical glow: accent colors in octarine, faint gold, or sky blue highlights.
+
+**Background:**
+
+* Painterly smoky vignette.
+* Optional Easter Eggs:
+
+  * Silhouette of a cluttered library.
+  * Floating teacups.
+  * Animated socks drifting.
+  * Shadowy glimpse of Death lurking subtly behind a shelf.
+  * A spellbook page rearranging itself mid-air.
+
+---
+
+## **6. Artistic Style & Technical Specs**
+
+* **Lineart:** Clean contour lines, soft sketch warmth where fitting.
+* **Brushwork:** Painterly, textured brush for fabric folds and magical glow.
+* **Color Palette:** Muted, earthy reds, faded purples, greys, and browns; magical accents in octarine, gold, and blue.
+* **Lighting:** Strong natural source with dramatic edge lighting emphasizing magical elements.
+* **Resolution:** High detail with visible texture — creases in robes, loose threads, and layered shading.
+
+---
+
+## **7. Humor & Visual Irony**
+
+* Maintain subtle Discworld-inspired parody:
+
+  * Slight exaggeration in posture and expression.
+  * Unexpected labels (e.g., sock “For Temporal Emergencies”).
+  * Minor chaotic elements: animated inkblots, arguing footnotes, or hidden jokes.
+
+---
+
+## ✅ **KEY MUST-HAVES FOR CONSISTENCY**
+
+✔ Young pale wizard with wide, glinting eyes.
+✔ Oversized red robe and floppy hat with runes, stars, and tea stains.
+✔ Humble staff with faint octarine glow.
+✔ Chaotic, shifting spellbook.
+✔ Off-balance, bemused posture.
+✔ Visual humor — hidden jokes, magical quirks, and playful contradictions.
+
+---
+
+## 📜 **INTENT**
+
+Merzhin’s visual identity balances Arthurian gravitas with Discworld absurdity: a scruffy, brilliant diviner always out of sync with reality — brimming with foresight and comedic chaos in equal measure.
