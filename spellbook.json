@@ -15,8 +15,8 @@
         "description": "Une main spectrale et flottante apparaît à un endroit que vous choisissez à portée. La main reste active pendant toute la durée du sort. Elle disparaît si elle s'éloigne de vous de plus de 9 mètres ou si vous relancez ce sort.<br><br><strong>Utilisation initiale :</strong><br>Lorsque vous lancez ce sort, vous pouvez utiliser la main pour :<br>• Manipuler un objet<br>• Ouvrir une porte ou un contenant déverrouillé<br>• Ranger ou récupérer un objet d'un contenant ouvert<br>• Vider le contenu d'une fiole<br><br><strong>Tours ultérieurs :</strong><br>Par une action Magie lors de vos tours ultérieurs, vous pouvez continuer de contrôler la main ainsi. Cette action vous permet de déplacer la main jusqu'à 9 mètres.<br><br><strong>Limitations :</strong><br>La main ne peut pas attaquer, ni activer des objets magiques, ni porter plus de 5 kg.",
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
-        "learned": true,
-        "learning_source": "Unseen University",
+        "learned": false,
+        "learning_source": "",
         "comment": "Déplacer des objets à distance : tirez des leviers douteux, ouvrez des portes suspectes, triez votre linge enchanté (attention aux chaussettes dimensionnelles), et évitez de risquer vos phalanges. Ne fonctionne pas sur les tartes explosives. Ne me demandez pas pourquoi.",
         "score": 4
     },
@@ -57,8 +57,8 @@
         "description": "Vous essayez de rompre temporairement l'esprit d'une créature que vous pouvez voir à portée.<br><br><strong>Jet de sauvegarde :</strong><br>La cible doit réussir un jet de sauvegarde d'Intelligence.<br><br><strong>En cas d'échec :</strong><br>• Subit 1d6 dégâts psychiques<br>• Soustrait 1d4 du prochain jet de sauvegarde qu'elle effectue avant la fin de votre prochain tour",
         "higher_levels": "<strong>Amélioration de sort mineur.</strong> Les dégâts augmentent de 1d6 lorsque vous atteignez les niveaux 5 (2d6), 11 (3d6) et 17 (4d6).",
         "origin": "Player's Handbook 2024 (BR)",
-        "learned": false,
-        "learning_source": "",
+        "learned": true,
+        "learning_source": "Librairie de l'Unseen University",
         "comment": "(Optionnel) : Les dégâts psychiques infligés sur un jet de sauvegarde d'Intelligence sont déjà spectaculaires en soi. Les jets de sauvegarde d'Intelligence figurent parmi les plus faibles de manière constante, et la résistance ou l'immunité aux dégâts psychiques est rare (quoique présente, surtout chez les ennemis sans cervelle, comme les zombies). Cela seul suffit à faire de la Piqûre Mentale l'un des sorts à effet fiable les plus convaincants de la 5e, mais ce n'est que le début. Avec uniquement des composantes verbales, la Piqûre Mentale peut être incantée même si vos mains sont occupées ou que vous êtes ligoté – une aubaine pour tout adepte du Don de la Guerre. Elle impose également un malus de -1d4 au prochain jet de sauvegarde de la cible, la rendant plus vulnérable à vos sorts les plus retors. Vous pouvez aussi vous contenter de frapper encore et encore avec la Fente Mentale, en regardant vos ennemis tenter désespérément de résister à votre DD de sauvegarde avec un bonus de +0… et le petit malus de -1d4 qui leur vient tout droit de votre coup précédent.",
         "score": 4
     },
@@ -77,8 +77,8 @@
         "duration": "1 minute",
         "description": "Le lanceur de sorts crée un son ou l'image d'un objet à portée pendant une minute.<br><br><strong>Fin de l'illusion :</strong><br>Cette illusion se termine également si :<br>• Elle est révoquée au prix d'une action<br>• Ce sort est lancé une nouvelle fois<br><br><strong>Si l'illusion est un son :</strong><br>• Le volume peut aller d'un simple chuchotement à un cri<br>• Il peut s'agir de votre voix, de la voix de quelqu'un d'autre, du rugissement d'un lion, d'un roulement de tambours, ou tout autre son que vous choisissez<br>• Le son peut autant ne pas diminuer en intensité pendant la durée du sort qu'être discret et produit à différents instants dans cet intervalle de temps<br><br><strong>Si l'illusion est une image ou un objet :</strong><br>• Exemples : une chaise, des traces de pas boueuses ou un petit coffre<br>• Ne peut pas être plus large qu'un cube de 1,50 mètre d'arête<br>• Cette image ne peut produire de son, lumière, odeur ou tout autre effet sensoriel<br>• Une interaction physique avec l'image révèle l'illusion, car elle peut être traversée par n'importe quoi<br><br><strong>Détection de l'illusion :</strong><br>Si une créature utilise une action pour examiner le son ou l'image, elle peut comprendre qu'il s'agit d'une illusion grâce à un jet d'Intelligence (Investigation) contre le DD de sauvegarde de votre sort. Si une créature discerne l'illusion pour ce qu'elle est, l'illusion s'évanouit pour la créature.",
         "origin": "Player's Handbook (SRD)",
-        "learned": false,
-        "learning_source": "",
+        "learned": true,
+        "learning_source": "Dans le dortoir. Très utile pour faire le mur",
         "comment": "Ample marge de manœuvre pour des usages créatifs et trompeurs. Le cube de 1,50 mètre de côté offre largement de quoi créer quelque chose derrière quoi se cacher, à condition que vos ennemis ne vous voient pas façonner l'illusion.",
         "score": 4
     },
@@ -118,7 +118,7 @@
         "description": "Choisissez un cube d'eau visible de 1,50 mètre d'arête dans la portée du sort.<br><br><strong>Vous pouvez alors le manipuler d'une des façons suivantes :</strong><br><br>• <strong>Déplacer l'eau :</strong> Vous déplacez instantanément ou modifiez le sens du courant selon vos directives jusqu'à 1,50 mètre dans n'importe quelle direction. Ce mouvement n'a pas assez de force pour causer des dégâts<br><br>• <strong>Animer l'eau :</strong> Vous pouvez faire apparaitre des formes simples dans l'eau et les animer selon vos instructions. Ce changement dure 1 heure<br><br>• <strong>Modifier l'apparence :</strong> Vous modifiez la couleur ou l'opacité de l'eau. L'eau doit être transformée de façon homogène. Ce changement dure 1 heure<br><br>• <strong>Geler l'eau :</strong> Vous gelez l'eau, à condition qu'elle ne contienne aucune créature. L'eau dégèle au bout de 1 heure<br><br><strong>Limitation :</strong><br>Si vous lancez ce sort plusieurs fois, vous ne pouvez avoir que deux de ces effets non-instantanés actifs à la fois, et vous pouvez en dissiper un en une action.",
         "origin": "Xanathar's Guide to Everything (XGE)",
         "learned": true,
-        "learning_source": "Librarian of Unseen University",
+        "learning_source": "Librairie de l'Unseen University",
         "comment": "Aussi exploitable que Prestidigitation : geler un cube d'eau et l'écraser sur quelqu'un, briser une serrure en la gelant, ériger un dôme de glace, bloquer un couloir, construire un pont par segments de 1,50 m… Si vous avez un tonneau d'eau et ce tour, vous avez une réponse à tout. Ce sort enterre ses équivalents élémentaires, et c'est bien mérité. Voir mon <a href=\"https://rpgbot.net/dnd5/characters/shape-water\" target=\"_blank\">Guide Pratique du Modelage de l'Eau</a> pour plus d'idées brillamment discutables.",
         "score": 4
     },
@@ -201,8 +201,8 @@
         "description": "Vous placez une alarme contre les intrusions. Choisissez une porte, une fenêtre ou une zone à portée qui ne dépasse pas un cube de 6 mètres.<br><br><strong>Fonctionnement :</strong><br>• Jusqu'à la fin du sort, une alarme vous alerte chaque fois qu'une créature touche ou pénètre dans la zone protégée<br>• Lorsque vous lancez le sort, vous pouvez désigner des créatures qui ne déclencheront pas l'alarme<br><br><strong>Types d'alarme :</strong><br>Vous choisissez si l'alarme est audible ou mentale :<br><br>• <strong>Alarme audible :</strong> L'alarme produit le son d'une clochette pendant 10 secondes dans un rayon de 18 mètres de la zone protégée<br><br>• <strong>Alarme mentale :</strong> Vous êtes alerté par un signal mental si vous êtes dans un rayon de 1,5 kilomètre de la zone protégée. Ce signal vous réveille si vous dormez",
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
-        "learned": false,
-        "learning_source": "",
+        "learned": true,
+        "learning_source": "Librairie de l'Unseen University",
         "comment": "Ne le préparez jamais, mais lancez-le au moins une fois en rituel à chaque repos long.",
         "score": 4
     },
@@ -222,8 +222,8 @@
         "description": "Pendant toute la durée du sort, vous comprenez le sens littéral de toute langue que vous entendez ainsi que le langage des signes.<br><br><strong>Langues écrites :</strong><br>• Vous comprenez également toute langue écrite que vous voyez, mais vous devez toucher la surface sur laquelle les mots sont écrits<br>• Il faut environ une minute pour lire une page de texte<br><br><strong>Limitation :</strong><br>Ce sort ne décode pas les symboles ni les messages secrets",
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
-        "learned": false,
-        "learning_source": "",
+        "learned": true,
+        "learning_source": "Librairie de l'Unseen University",
         "comment": "Lancez ce sort en rituel. Malheureusement, c'est un sort qui ne cible que vous, donc votre communication sera à sens unique… sauf si ce à quoi vous parlez a aussi trouvé une solution.",
         "score": 4
     },
@@ -285,8 +285,8 @@
         "description": "Vous obtenez les services d'un familier, un esprit qui prend une forme animale de votre choix.<br><br><strong>Formes disponibles :</strong><br>Chauve-souris, Chat, Grenouille, Faucon, Lézard, Pieuvre, Chouette, Rat, Corbeau, Araignée, Belette, ou une autre Bête qui a un facteur de puissance de 0.<br><br><strong>Caractéristiques du familier :</strong><br>• Apparaît dans un espace inoccupé à portée<br>• A les statistiques de la forme choisie<br>• Est un Céleste, une Fée ou un Fiélon (votre choix) au lieu d'une Bête<br>• Agit indépendamment de vous, mais obéit à vos ordres<br><br><strong>Connexion télépathique :</strong><br>• Communication télépathique dans un rayon de 30 mètres<br>• Par une action bonus : voir à travers ses yeux et entendre ce qu'il entend jusqu'au début de votre prochain tour (bénéficiant de tous ses sens spéciaux)<br>• Peut délivrer vos sorts de contact (dans un rayon de 30 mètres, en prenant une réaction)<br><br><strong>Combat :</strong><br>• Le familier est un allié pour vous et vos alliés<br>• Lance sa propre Initiative et agit à son propre tour<br>• Ne peut pas attaquer, mais peut effectuer d'autres actions normalement<br><br><strong>Disparition et rappel :</strong><br>• Disparaît quand il tombe à 0 point de vie (réapparaît en relançant ce sort)<br>• Peut être temporairement renvoyé dans une dimension de poche (action de Magie)<br>• Peut être rappelé dans un espace inoccupé dans un rayon de 9 mètres (action de Magie)<br>• Laisse derrière lui tout ce qu'il portait ou transportait quand il disparaît<br><br><strong>Limitation :</strong><br>Vous ne pouvez pas avoir plus d'un familier à la fois. Si vous lancez ce sort alors que vous avez un familier, vous lui faites adopter une nouvelle forme éligible.",
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
-        "learned": false,
-        "learning_source": "",
+        "learned": true,
+        "learning_source": "Librairie de l'Unseen University",
         "comment": "Un familier est un atout incroyablement utile. Certes, il ne peut pas attaquer, mais il peut faire plein d'autres choses : transporter des objets entre les membres du groupe, utiliser l'action d'Aide et explorer les environs pour détecter les dangers. Les familiers ont très peu de points de vie, mais vous pouvez toujours les invoquer à nouveau si vous avez les composants valant 10 po sous la main. Passés les premiers niveaux, la mort de votre familier n'est donc plus qu'un désagrément mineur. En général, la chouette est le meilleur choix, grâce à son aptitude “Vol stationnaire” qui lui permet de voler au milieu des ennemis et d'en ressortir sans provoquer d'attaques d'opportunité, pour utiliser l'action d'Aide. Vous pouvez aussi trouver des buffs spécifiques, comme Souffle de dragon, à lancer sur votre familier pour en faire une véritable menace en combat.",
         "score": 4
     },
@@ -348,8 +348,8 @@
         "description": "Une barrière imperceptible de force magique vous protège.<br><br><strong>Effets jusqu'au début de votre prochain tour :</strong><br>• Bonus de +5 à la CA (y compris contre l'attaque déclenchante)<br>• Immunité aux dégâts de Projectile Magique",
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
-        "learned": false,
-        "learning_source": "",
+        "learned": true,
+        "learning_source": "Librairie de l'Unseen University",
         "comment": "Le fait que vous puissiez lancer ce sort après avoir entendu le résultat du jet d'attaque signifie que vous pouvez souvent transformer une touche en échec. En plus de l'Armure du Mage, cela vous permet d'atteindre efficacement une CA de 17 + Dextérité tant que vous avez encore des emplacements de sort de niveau 1 à sacrifier.",
         "score": 4
     },
@@ -390,8 +390,8 @@
         "description": "Vous distrayez magiquement la créature déclenchante et transformez son incertitude momentanée en encouragement pour une autre créature.<br><br><strong>Effet sur la créature déclenchante :</strong><br>• Doit relancer le d20 et utiliser le résultat le plus bas<br><br><strong>Effet d'encouragement :</strong><br>• Vous choisissez une créature différente que vous pouvez voir à portée (vous pouvez vous choisir)<br>• La créature choisie a l'avantage sur le prochain jet d'attaque, test de caractéristique ou jet de sauvegarde qu'elle effectue dans la minute suivante<br><br><strong>Limitation :</strong><br>Une créature ne peut être renforcée que par une seule utilisation de ce sort à la fois.",
         "higher_levels": "",
         "origin": "Strixhaven: A Curriculum of Chaos",
-        "learned": false,
-        "learning_source": "",
+        "learned": true,
+        "learning_source": "Librairie de l'Unseen University",
         "comment": "Extrêmement puissant, mais également très complexe. Pour plus de détails sur les innombrables façons (et parfois douteuses) de détourner ce sort, voyez mon <a href=\"https://rpgbot.net/dnd-5es-silvery-barbs/\" target=\"_blank\">Guide sur les Barbes argentées</a>.",
         "score": 4
     },
@@ -411,8 +411,8 @@
         "description": "Toute créature de votre choix dans une sphère de 1,50 m de rayon centrée sur un point à portée doit réussir un jet de sauvegarde de Sagesse.<br><br><strong>Échec au premier jet :</strong><br>• État Incapable d'agir jusqu'à la fin de son prochain tour<br>• Doit refaire le jet de sauvegarde<br><br><strong>Échec au deuxième jet :</strong><br>• État Inconscient pendant toute la durée du sort<br><br><strong>Fin prématurée du sort :</strong><br>• Si une cible subit des dégâts<br>• Si une personne dans un rayon de 1,50 m entreprend une action pour la libérer<br><br><strong>Immunités :</strong><br>Les créatures qui ne dorment pas (comme les elfes) ou qui sont immunisées contre l'état Épuisement réussissent automatiquement leurs jets de sauvegarde.",
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
-        "learned": false,
-        "learning_source": "",
+        "learned": true,
+        "learning_source": "Librairie de l'Unseen University",
         "comment": "Avec une moyenne de 22,5 PV de créatures affectées, vous ne pourrez pas toucher grand monde si elles sont en pleine forme, mais vous pouvez toujours attendre de les user un peu avant de les achever avec Sommeil. Sommeil n'exige pas de jet de sauvegarde, ce qui en fait un moyen puissant et fiable d'incapaciter des ennemis peu robustes, même à haut niveau.",
         "score": 4
     }
