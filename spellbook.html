@@ -1261,6 +1261,7 @@
 
                 this.filteredSpells = this.spells.filter(spell => {
                     const matchesSearch = spell.name.toLowerCase().includes(searchTerm) ||
+                                        (spell.name_en && spell.name_en.toLowerCase().includes(searchTerm)) ||
                                         spell.description.toLowerCase().includes(searchTerm);
                     const matchesLevel = !levelFilter || spell.level.toString() === levelFilter;
                     const matchesSchool = !schoolFilter || spell.school === schoolFilter;
