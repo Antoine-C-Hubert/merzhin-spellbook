@@ -180,8 +180,8 @@
         "description": "Le sort capte une partie de l'énergie entrante, ce qui réduit son effet sur vous et la stocke pour votre prochaine attaque au corps à corps.<br><br><strong>Effets immédiats :</strong><br>• Vous obtenez une résistance à ce type de dégâts jusqu'au début de votre prochain tour<br><br><strong>Effet retardé :</strong><br>• La première fois que vous touchez avec une attaque au corps à corps lors de votre prochain tour, la cible subit 1d6 dégâts supplémentaires du type d'élément ciblé, et le sort se termine",
         "higher_levels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 2 ou supérieur, les dégâts supplémentaires augmentent de 1d6 pour chaque niveau d'emplacement au-delà du niveau 1.",
         "origin": "Xanathar's Guide to Everything",
-        "learned": false,
-        "learning_source": "",
+        "learned": true,
+        "learning_source": "Passage au niveau 2",
         "comment": "Une excellente option défensive à tout niveau : elle pourra vous sauver la vie face à une source imprévisible de dégâts élémentaires, comme un piège ou un sort. Le bonus de dégâts sur votre prochaine attaque est largement inutile, mais l'utiliser reste toujours un petit frisson bienvenu.",
         "score": 4
     },
@@ -285,8 +285,8 @@
         "description": "Choisissez jusqu'à cinq créatures en chute libre à portée.<br><br><strong>Effet :</strong><br>• La vitesse de chute d'une créature est réduite à 18 mètres par round jusqu'à la fin du sort<br>• Si une créature atterrit avant la fin du sort, elle ne subit aucun dégât de la chute et le sort prend fin pour elle",
         "higher_levels": "",
         "origin": "Player's Handbook 2024 (BR)",
-        "learned": false,
-        "learning_source": "",
+        "learned": true,
+        "learning_source": "Passage au niveau 2",
         "comment": "Quelqu'un dans le groupe doit avoir ce sort en permanence, et vous êtes un quelqu'un. Mourir de dégâts de chute est un moyen ridicule et embarrassant de finir.",
         "score": 4
     },
