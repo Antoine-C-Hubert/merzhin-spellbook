@@ -2,21 +2,22 @@ Merzhin, prodige des coïncidences douteuses et catalyseur de hasards étrangeme
 
 Race : Humain
 Classe : Magicien (École de Divination)
-Niveau : 1
+Niveau : 3
 Origine : Criminel (plus vigilant par obligation que par malhonnêteté, souvent accusé d'être au mauvais endroit au mauvais moment)
 Alignement : Chaotique Bon (et terrible sprinteur)
 
 Histoire :
+Dans sa région d'iorigine, les personnes naturellement sensibles à la magie et aptes à l'étudier, sont les 8eme fils de 8eme fils.
 Merzhin est le huitième fils d’un huitième fils d’un huitième fils, ce qui - selon les lois de l’inévitabilité narrative - le rend spécial.
 Pas du genre "regarde ses jolies boucles", mais plutôt "l’univers lui a offert une tache de naissance lumineuse en forme de points de suspension".
 Sa mère était une herboriste au verbe acéré, qui adorait discuter avec les plantes.
-Les mages, naturellement sensibles à la magie et aptes à l'étudier, sont les 8eme fils de 8eme fils.
-Ils sont attirés par les universités comme l'UU (Unseen University) et ils y font carrière par tradition mais aussi parce que c'est ce que le multivers a trouvé de mieux pour les empêcher de procréer, pour éviter l'avènement d'une source (8ème fils d'un mage, mage au carré, autant une potentielle bénédiction qu'un cataclysme probable pour le multivers et toutes les créatures qui y vivent).
-Tous les 1000 ans, d'après la tradition orale et floue, il arrive qu'un mage se perde en route et ne suive pas ces traditions salvatrices. 
+Son père s'était vu, peut-être légèrement forcé par son ascendance, suivre un cursus de mage.
+Ces derniers sont naturellement attirés par les universités comme l'UU (Unseen University) et ils y font carrière par tradition mais aussi parce que c'est ce que le multivers a trouvé de mieux pour les empêcher de procréer, pour éviter l'avènement d'une source (8ème fils d'un mage, mage au carré, autant une potentielle bénédiction qu'un cataclysme probable pour le multivers et toutes les créatures qui y vivent).
+Tous les 1000 ans, d'après une tradition orale et floue, il arrive qu'un mage se perde en route et ne suive pas ces us et coutumes salvatrices. 
 L'un de ces mages est le père de Merzhin, un magicien raté et un accordéoniste itinérant pas beaucoup plus doué, qui disparaissait toujours à l’approche de la saison des impôts.
-Quant à son autre père ? Eh bien, la rumeur locale prétend que sa mère était parfois entendue en train de danser et chanter sur une musique démoniaque lorsque le père était absent (une musique avec des hurlements et des cailloux dedans).
+Quant à son Autre père ? Eh bien, la rumeur locale prétend que la mère de Merzhin était parfois entendue en train de danser et chanter sur une musique démoniaque lorsque le père était absent (une musique avec des hurlements et des bruits de cailloux).
 
-Dès qu’il a su marcher, Merzhin a su aussi trébucher sans raison et expliquer pourquoi.
+Dès qu’il a su marcher, Merzhin a su aussi trébucher sans raison mais expliquer pourquoi.
 Il parlait par énigmes, conversait avec les oiseaux, et prédisait parfois la météo avec une précision alarmante.
 Naturellement, tout cela l’a mené à intégrer de petites écoles de magie locales.
 Malheureusement, en tant qu’équivalent magique d’un dé pipé, Merzhin a commencé à manifester des pouvoirs imposants mais aléatoires, ce qui lui a valu d'impossibles échecs relationnels avec les mages, pour qui la tradition prime sur le talent.
@@ -41,18 +42,18 @@ Il le garde glissé dans une sacoche qui est peut-être un peu plus grande à l�
 
 Personnalité :
 Merzhin est gentil, mais à la manière d’une énigme : on ne comprend ce qu’il fait qu’une fois qu’il est trop tard.
-Il est obsédé par la causalité, le destin, le libre arbitre et la question de savoir si les chats dirigent secrètement l’univers ou s’ils aiment simplement rire avec la Mort.
+Il est obsédé par la causalité, le destin, le libre arbitre et la question de savoir si les chats dirigent secrètement l’univers ou s’ils aiment simplement rire avec la Mort (qu'eux seuls peuvent voir venir, comme chacun sait).
 Il a un humour sec, une tendance à plier les règles avec des notes de bas de page, et une passion pour le thé qui a le goût de vieux livres ou des bibliothèques oubliées.
-Il ne peut pas rester trop longtemps loin des bibliothèques sans avoir le vertige, et connaît déjà certains des secrets de l’espace-L, espace-temps plié et connecté entre toutes les librairies d'ouvrages magiques du fait de la concentration de tels ouvrages.
+Il ne peut pas rester trop longtemps loin des bibliothèques sans avoir le vertige et connaît déjà certains des secrets de l’espace-L, espace-temps plié et connecté entre toutes les librairies d'ouvrages magiques du fait de la concentration de tels ouvrages.
 C'est d'ailleurs là qu'il garde son grimoire de secours.
 
 Motivations :
-- Découvrir les limites du destin (et peut-être les pousser du haut d’une falaise).
+- Découvrir les limites du destin.
 - Comprendre pourquoi il existe et ce que l’univers attend de lui (si tant est qu’il attende quelque chose).
 - Prouver que les puissants magiciens peuvent aussi être utiles, humbles et relativement inoffensifs.
 
 Bizarreries de Divination :
 - Murmure souvent des choses inquiétantes comme "pas cette cuillère..." avant de commander son petit-déjeuner.
 - Répond fréquemment à des questions que vous n’avez pas encore posées.
-- Semble parfois écouter quelque chose que lui seul peut entendre - probablement vos futures plaintes.
+- Semble parfois écouter quelque chose que lui seul peut entendre, probablement vos futures plaintes.
 
